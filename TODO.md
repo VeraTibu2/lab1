@@ -1,6 +1,6 @@
 # Lab 1
 *Denna fil fungerar som planering/översikt för denna labb!*
-- [ ] Skapa arvshierarki
+- [X] Skapa arvshierarki
   - Följ open-closed principen "*Software modules should be open for extension, but closed for modification.*"
 - Resonera och bestäm om interfaces eller subclasses skall användas
   - **Subclass**
