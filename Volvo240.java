@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Volvo240 extends cars{
+public class Volvo240 extends cars {
 
     public final static double trimFactor = 1.25;
 
@@ -27,6 +27,8 @@ public class Volvo240 extends cars{
     private void decrementSpeed(double amount){
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
     }
+
+
 
     // TODO fix this method according to lab pm
     private void gas(double amount){

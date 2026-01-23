@@ -1,6 +1,7 @@
 import java.awt.*;
+import jUnit;
 
-public class cars {
+public abstract class cars implements Movable{
     public int nrDoors; // Number of doors on the car
     public double enginePower; // Engine power of the car
     public double currentSpeed; // The current speed of the car
@@ -8,6 +9,10 @@ public class cars {
     public String modelName; // The car model name
     public double x; // xcord
     public double y; //ycord
+
+    // Private/Public means scoping to the CLASS
+
+
     public int getNrDoors(){
 
         return nrDoors;
@@ -20,13 +25,32 @@ public class cars {
     public double getCurrentSpeed(){
         return currentSpeed;
     }
+
     public Color getColor(){
         return color;
+    }
+
+    public void move() {
+        x = x + currentSpeed;
+        y = y + currentSpeed;
+    }
+
+    public void turnLeft(){
+        if (currentSpeed > 0){
+            currentSpeed = -1*currentSpeed;
+        }
+
+    }
+    public void turnRight(){
+        if(currentSpeed < 0){
+            currentSpeed = -1*currentSpeed;
+        }
     }
 
     public void setColor(Color clr){
         color = clr;
     }
+
     public void startEngine(){
         currentSpeed = 0.1;
     }
