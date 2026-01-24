@@ -1,7 +1,6 @@
 import java.awt.*;
-import jUnit;
 
-public abstract class cars implements Movable{
+public class cars implements Movable{ //can't have the "abstract" while having a Testing class
     public int nrDoors; // Number of doors on the car
     public double enginePower; // Engine power of the car
     public double currentSpeed; // The current speed of the car
