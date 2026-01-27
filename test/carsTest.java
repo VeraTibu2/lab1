@@ -20,13 +20,18 @@ public class carsTest {
     void TestTurn(){
         double[] initialDirection;
         initialDirection = s.getDirection();
-
+        s.turnLeft();
+        s.turnRight();
+        double[] turned;
+        turned = s.getDirection();
+        assertEquals(turned[0], initialDirection[0]);
+        assertEquals(turned[1], initialDirection[1]);
     }
 
     @Test
     void TestTurbo(){
         s.setTurboOn();
-        assertTrue(s.turboOn == true);
+        assertTrue(s.turboOn);
 
     }
 

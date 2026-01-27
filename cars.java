@@ -42,13 +42,13 @@ public abstract class cars implements Movable { //can't have the "abstract" whil
 
     public void turnLeft () {
         dir_index -=1; //dec Index. Next direction: counter clockwise
-        dir_index %=4; // mod 4 to keep it in range
+        dir_index =floorMod(dir_index,4); // mod 4 to keep it in range
         direction = directions[dir_index]; //get direction
     }
 
     public void turnRight () {
         dir_index +=1;
-        dir_index %=4;
+        dir_index =floorMod(dir_index,4);
         direction = directions[dir_index];
     }
 
