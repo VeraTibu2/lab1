@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Volvo240 extends cars {
+public class Volvo240 extends cars{
 
     public final static double trimFactor = 1.25;
 
@@ -15,13 +15,13 @@ public class Volvo240 extends cars {
     }
 
 
-
-    private double speedFactor(){
+    @Override
+    protected double speedFactor(){
         return enginePower * 0.01 * trimFactor;
     }
 
     private void incrementSpeed(double amount){
-	    currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
     }
 
     private void decrementSpeed(double amount){
@@ -29,14 +29,4 @@ public class Volvo240 extends cars {
     }
 
 
-
-    // TODO fix this method according to lab pm
-    private void gas(double amount){
-        incrementSpeed(amount);
-    }
-
-    // TODO fix this method according to lab pm
-    private void brake(double amount){
-        decrementSpeed(amount);
-    }
 }

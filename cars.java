@@ -67,4 +67,28 @@ public abstract class cars implements Movable { //can't have the "abstract" whil
     public double[] getDirection(){
         return direction;
     }
+
+    private void incrementSpeed(double amount){
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
+    }
+
+    private void decrementSpeed(double amount){
+        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
+    }
+
+    // TODO fix this method according to lab pm
+    public void gas(double amount){
+        if(amount <= 1 && amount >= 0) {
+            incrementSpeed(amount);
+        }
+    }
+
+    // TODO fix this method according to lab pm
+    public void brake(double amount){
+        if(amount <= 1 && amount >= 0) {
+            decrementSpeed(amount);
+        }
+    }
+
+    protected abstract double speedFactor();
 }
