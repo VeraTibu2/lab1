@@ -1,3 +1,5 @@
+import org.w3c.dom.ranges.RangeException;
+
 import java.awt.*;
 
 import static java.lang.Math.*;
@@ -76,17 +78,26 @@ public abstract class cars implements Movable { //can't have the "abstract" whil
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
     }
 
-    // TODO fix this method according to lab pm
+    private void throwRangeError(){
+        throw new IllegalArgumentException("Error: Value out of range 0...1");
+    }
+
     public void gas(double amount){
         if(amount <= 1 && amount >= 0) {
             incrementSpeed(amount);
         }
+        else{
+            throwRangeError();
+        }
     }
 
-    // TODO fix this method according to lab pm
+
     public void brake(double amount){
         if(amount <= 1 && amount >= 0) {
             decrementSpeed(amount);
+        }
+        else{
+            throwRangeError();
         }
     }
 
