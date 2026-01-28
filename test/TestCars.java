@@ -35,7 +35,16 @@ public class TestCars {
 
     }
 
-
+    @Test
+    void TestGasRange(){
+        boolean thrown = false;
+        try {
+            s.gas(1.3d);
+        } catch (Exception e) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
 
 
 
