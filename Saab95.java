@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Saab95 extends cars implements Speed {
+public class Saab95 extends cars {
 
     public boolean turboOn;
 
@@ -23,7 +23,8 @@ public class Saab95 extends cars implements Speed {
 	    turboOn = false;
     }
 
-    public double speedFactor(){
+    @Override
+    protected double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;
         return enginePower * 0.01 * turbo;
