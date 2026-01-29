@@ -9,8 +9,8 @@ public abstract class cars implements Movable { //can't have the "abstract" whil
     // be testing subclasses.
 
     public int nrDoors;
-    public double enginePower;
-    public double currentSpeed; // The current speed of the car
+    protected double enginePower;
+    protected double currentSpeed; // The current speed of the car
     public Color color; // Color of the car
     public String modelName; // The car model name
     public double x; // xcord
