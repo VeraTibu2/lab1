@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+
+import java.awt.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -52,7 +55,7 @@ public class TestCars {
         assertEquals(v.getNrDoors(), v.nrDoors);
     }
     @Test
-    void TestGasRange(){
+    void TestGasRange(){ //test gas()
         boolean thrown = false;
         try {
             s.gas(1.3d);
@@ -87,7 +90,23 @@ public class TestCars {
 
 
 
+    @Test
+    void TestSetColor(){
+        v.setColor(Color.green);
+        assertEquals(Color.green, v.getColor());
+
+    }
+
+    @Test
+    void TestSetTurboOff(){
+        s.setTurboOn();
+        s.setTurboOff();
+    }
+
+
+
 
     //gas and break
 
 }
+
