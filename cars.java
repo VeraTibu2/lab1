@@ -8,7 +8,7 @@ public abstract class cars implements Movable { //can't have the "abstract" whil
     //We can have abstract, because we will not be testing the car class, we will
     // be testing subclasses.
 
-    public int nrDoors;
+    protected int nrDoors;
     protected double enginePower;
     protected double currentSpeed; // The current speed of the car
     public Color color; // Color of the car

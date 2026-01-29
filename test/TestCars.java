@@ -3,12 +3,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TestCars {
+
     Volvo240 v = new Volvo240();
     Saab95 s = new Saab95();
 
 
     @Test
-    void TestEngine(){
+    void TestEngineOn(){
         assertEquals(100,v.getEnginePower());
         v.startEngine();
         assertEquals(0.1,v.currentSpeed);
@@ -29,12 +30,27 @@ public class TestCars {
     }
 
     @Test
+    void TestMove(){ // Does move() actually move
+        s.brake(1.d);
+        double[] s0 = {s.x,s.y};
+        s.gas(0.7d);
+        s.move();
+        double[] s1 = {s.x,s.y};
+        assertTrue(( s0[0]!=s1[0] || s0[1]!=s1[1]));
+    }
+    @Test
     void TestTurbo(){
         s.setTurboOn();
         assertTrue(s.turboOn);
 
     }
 
+
+
+    @Test
+    void TestnrDoors(){
+        assertEquals(v.getNrDoors(), v.nrDoors);
+    }
     @Test
     void TestGasRange(){
         boolean thrown = false;
@@ -45,6 +61,30 @@ public class TestCars {
         }
         assertTrue(thrown);
     }
+
+
+    @Test
+    void TestBrakeRange(){ //test gas()
+        boolean thrown = false;
+        try {
+            s.brake(1.3d);
+        } catch (Exception e) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+    @Test
+    void TestBrakeDecrease(){ //tests brake()
+        double breakDiff;
+        s.gas(1.d);
+        double s0 = s.getCurrentSpeed();
+        s.brake(.5d);
+        double s1 = s.getCurrentSpeed();
+        breakDiff = s1-s0;
+        assertTrue(breakDiff<0.d);
+    }
+
 
 
 
