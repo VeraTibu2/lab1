@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Saab95 extends cars {
+public class Saab95 extends Cars {
 
     public boolean turboOn;
 

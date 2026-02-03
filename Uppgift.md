@@ -1,10 +1,3 @@
-I denna laborationsuppgift är tanken att ni ska fortsätta på den lösning ni gjort i del 1. Ni ska lära er jobba med extensibilitet och polymorfism, och de mekanismer i Java som möjliggör detta. Se till att noga läsa igenom instruktionerna och att följa de regler och krav som labbdokumentet föreskriver. Börja med att kolla igenom hela labbdokumentet och se vad som krävs för att få godkänt, samt med att ladda ner de filer som behövs.
-
-Koden som skrivs och godkänns i denna labb kommer senare att användas i Laboration 3.
-Generella regler för laboration:
-
-Det är inte tillåtet att dela, kopiera eller använda skriven kod från varandra på något sätt. Det är däremot fullt accepterat, för att inte säga uppmuntrat, att diskutera uppgifter och lösningar sinsemellan.
-För att få godkänt på labben gör ni muntliga redovisningar. Gruppen gör denna tillsammans: alla gruppmedlemmar kommer ställas frågor var och en för sig. För att gruppen ska bli godkänd ska alla gruppmedlemmar kunna svara på frågor. Se med andra ord till att ni hänger med i laborationen, och att era kamrater i gruppen hänger med. Fråga assistenterna om hjälp ifall ni fastnar.
 
 Krav för godkänt vid redovisning:
 
@@ -15,15 +8,19 @@ Alla gruppmedlemmar ska kunna svara på frågor om lösningen.
 
 ## Uppgift 1: Extensibilitet
 
-Skapa en representation av en Scania-lastbil med modellnamn Scania. Ge den rimliga startvärden för relevanta fält. Lägg den i filen Scania.java i samma mapp.
-Scania ska införlivas i er arvs-hierarki från tidigare, men ha ytterligare funktionalitet: den har ett flak som kan höjas (tippas) och sänkas. Införliva detta i er design så att vi kan hålla reda på vilken vinkel flaket har för närvarande, samt funktioner för att höja och sänka det.
-
+- [x] Skapa en representation av en Scania-lastbil med modellnamn Scania. Ge den rimliga startvärden för relevanta fält. Lägg den i filen Scania.java i samma mapp.
+- [x] Scania ska införlivas i er arvs-hierarki från tidigare, men ha ytterligare funktionalitet: 
+  - [ ] Den har ett flak som kan höjas (tippas) och sänkas. 
+  - [ ] Införliva detta i er design så att vi kan hålla reda på vilken vinkel flaket har för närvarande, 
+  - [ ] Samt funktioner för att höja och sänka det.
+  - [ ]
 Följande förhållanden ska gälla:
 
-Vinkeln på flaket kan inte vara lägre än 0 eller högre än 70.
-Det är bara om lastbilen står stilla som flaket får ha en annan vinkel än 0. Flaket ska inte kunna höjas om lastbilen är i rörelse; och lastbilen ska inte kunna köra om flaket är uppfällt.
+- [ ] Vinkeln på flaket kan inte vara lägre än 0 eller högre än 70.
+- [ ] Det är bara om lastbilen står stilla som flaket får ha en annan vinkel än 0.
+- [ ] Flaket ska inte kunna höjas om lastbilen är i rörelse; och lastbilen ska inte kunna köra om flaket är uppfällt.
 
-Lägg allt i Scania.java. Gör minst ett JUnit-test i er testklass.
+- [ ] Lägg allt i Scania.java. Gör minst ett JUnit-test i er testklass.
 
 
 ## Uppgift 2: Mer extensibilitet
