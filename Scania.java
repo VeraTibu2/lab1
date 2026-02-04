@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Scania extends Trucks {
+public abstract class Truck extends Automotive implements TruckBed {
 
 
     public Scania() {
@@ -12,6 +12,8 @@ public class Scania extends Trucks {
         x = 0;
         y = 0;
     }
+
+
     public double speedFactor(){
         return enginePower * 0.01;
     }

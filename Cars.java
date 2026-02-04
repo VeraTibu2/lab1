@@ -2,100 +2,24 @@ import java.awt.*;
 
 import static java.lang.Math.*;
 
-public abstract class Cars implements Movable { //can't have the "abstract" while having a Testing class
+public abstract class Cars extends Automotive implements Movable { //can't have the "abstract" while having a Testing class
     //We can have abstract, because we will not be testing the car class, we will
     // be testing subclasses.
 
-    protected int nrDoors;
-    protected double enginePower;
-    protected double currentSpeed; // The current speed of the car
-    public Color color; // Color of the car
-    public String modelName; // The car model name
-    public double x; // xcord
-    public double y; //ycord
-    private double[] direction = {0,1};
-    private final double[][] directions = {{0,1},{1,0},{0,-1},{-1,0}}; //up -> right -> down -> left
-    private int dir_index = 0;
 
-
-    public int getNrDoors () { return nrDoors; }
-
-    public double getEnginePower() {
-        return enginePower;
-    }
-
-    public double getCurrentSpeed () {
-        return currentSpeed;
-    }
-
-    public Color getColor () {
+    public final Color getColor() {
         return color;
     }
 
-    public void move () {
-        x = x + direction[0]*currentSpeed;
-        y = y + direction[1]*currentSpeed;
+    public final void move() {
+        double[] dir = getDirection();
+        x = x + dir[0] * getCurrentSpeed();
+        y = y + dir[1] * getCurrentSpeed();
     }
 
-    public void turnLeft () {
-        dir_index -=1; //dec Index. Next direction: counter clockwise
-        dir_index = floorMod(dir_index,4); // mod 4 to keep it in range
-        direction = directions[dir_index]; //get direction
-    }
-
-    public void turnRight () {
-        dir_index +=1;
-        dir_index = floorMod(dir_index,4);
-        direction = directions[dir_index];
-    }
-
-    public void setColor (Color clr){
+    public final void setColor(Color clr) {
         color = clr;
     }
 
-    public void startEngine () {
-        currentSpeed = 0.1;
-    }
-
-    public void stopEngine () {
-        currentSpeed = 0;
-    }
-
-    public double[] getDirection(){
-        return direction;
-    }
-
-    private void incrementSpeed(double amount){
-        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
-    }
-
-    private void decrementSpeed(double amount){
-        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
-    }
-
-    private void throwRangeError(){
-        throw new IllegalArgumentException("Error: Value out of range 0...1");
-    }
-
-    public void gas(double amount){
-        if(amount <= 1 && amount >= 0) {
-            incrementSpeed(amount);
-        }
-        else{
-            throwRangeError();
-        }
-    }
-
-    protected abstract double speedFactor();
-
-    public void brake(double amount){
-        if(amount <= 1 && amount >= 0) {
-            decrementSpeed(amount);
-        }
-        else{
-            throwRangeError();
-        }
-    }
-
-
 }
+
