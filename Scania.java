@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public abstract class Scania extends Trucks {
+public class Scania extends Trucks {
 
 
     public Scania() {
@@ -13,6 +13,11 @@ public abstract class Scania extends Trucks {
         y = 0;
     }
 
+    public final void move() {
+        if (!isRaised()) {
+            updatePosition();
+        }
+    }
 
     public double speedFactor(){
         return enginePower * 0.01;

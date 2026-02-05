@@ -12,9 +12,7 @@ public abstract class Cars extends Automotive implements Movable { //can't have 
     }
 
     public final void move() {
-        double[] dir = getDirection();
-        x = x + dir[0] * getCurrentSpeed();
-        y = y + dir[1] * getCurrentSpeed();
+        updatePosition();
     }
 
     public final void setColor(Color clr) {

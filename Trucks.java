@@ -12,24 +12,18 @@ public abstract class Trucks extends Automotive implements TruckBed, Movable {
     public void raiseBed(double angle){
         if (!isMoving()){bedAngle = Math.max(bedAngle-angle, maxBedAngle);}
     }
-            ;
+
     public void lowerBed(double angle){
         if (!isMoving()){bedAngle = Math.min(bedAngle-angle, minBedAngle);}
     }
+
     public double getBedAngle(){
         return bedAngle;
     }
 
-    public boolean isRaised(){
-        return !(bedAngle > minBedAngle);
+    public boolean isRaised() {
+        return (bedAngle > minBedAngle);
     }
 
-    public final void move() {
-        if (!isRaised()) {
-            double[] dir = getDirection();
-            x = x + dir[0] * getCurrentSpeed();
-            y = y + dir[1] * getCurrentSpeed();
-        }
-    }
 }
 

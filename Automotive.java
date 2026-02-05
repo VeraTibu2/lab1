@@ -38,6 +38,13 @@ public abstract class Automotive implements Movable {
         dir_index +=1;
         updateDirection();
     }
+
+    public final void updatePosition() {
+        double[] dir = getDirection();
+        x = x + dir[0] * getCurrentSpeed();
+        y = y + dir[1] * getCurrentSpeed();
+    };
+
     public double[] getDirection(){
         return direction;
     }

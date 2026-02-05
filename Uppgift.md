@@ -11,8 +11,8 @@ Alla gruppmedlemmar ska kunna svara på frågor om lösningen.
 - [x] Skapa en representation av en Scania-lastbil med modellnamn Scania. Ge den rimliga startvärden för relevanta fält. Lägg den i filen Scania.java i samma mapp.
 - [x] Scania ska införlivas i er arvs-hierarki från tidigare, men ha ytterligare funktionalitet: 
   - [x] Den har ett flak som kan höjas (tippas) och sänkas. 
-  - [typ] Införliva detta i er design så att vi kan hålla reda på vilken vinkel flaket har för närvarande, 
-  - [ ] Samt funktioner för att höja och sänka det.
+  - [x] Införliva detta i er design så att vi kan hålla reda på vilken vinkel flaket har för närvarande, 
+  - [x] Samt funktioner för att höja och sänka det.
   - [ ]
 Följande förhållanden ska gälla:
 
