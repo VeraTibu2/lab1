@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public abstract class Truck extends Automotive implements TruckBed {
+public abstract class Scania extends Trucks {
 
 
     public Scania() {
