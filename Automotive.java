@@ -2,16 +2,12 @@ import java.awt.*;
 
 import static java.lang.Math.floorMod;
 
-public abstract class Automotive implements Movable {
+public abstract class Automotive extends Vehicle implements Movable {
     protected int nrDoors;
     protected double enginePower;
     private double currentSpeed; // The current speed of the car
     public Color color; // Color of the car
     public String modelName; // The car model name
-    public double x; // xcord
-    public double y; //ycord
-    public double[] direction = {0,1};
-    private final double[][] directions = {{0,1},{1,0},{0,-1},{-1,0}}; //up -> right -> down -> left
     private int dir_index = 0;
 
     public final int getNrDoors () { return nrDoors; }
