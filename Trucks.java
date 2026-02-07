@@ -4,20 +4,24 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
     private double bedAngle = 0;
     public double maxBedAngle;
     public double minBedAngle;
-    private boolean isMoving(){
-        return getCurrentSpeed()>0;
-    }
     public enum rampState { RAISED, LOWERED; }
     public rampState currentRampState;
     protected int capacity;
-
     public Stack<Cars> loadedCars;
 
+
+
     public Trucks() {
+
         currentRampState = rampState.RAISED;
     }
 
-    public void getCapacity(int capacity){}
+
+
+    private boolean isMoving(){
+        return getCurrentSpeed()>0;
+    }
+
     public void raiseBed(double angle){
         if (!isMoving()){bedAngle = Math.max(bedAngle-angle, maxBedAngle);}
     }
