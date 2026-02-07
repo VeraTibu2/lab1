@@ -12,8 +12,8 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
 
 
     public Trucks() {
-
         currentRampState = rampState.RAISED;
+
     }
 
 
@@ -23,11 +23,11 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
     }
 
     public void raiseBed(double angle){
-        if (!isMoving()){bedAngle = Math.max(bedAngle-angle, maxBedAngle);}
+        if (!isMoving()){bedAngle = Math.min(bedAngle+angle, maxBedAngle);}
     }
 
     public void lowerBed(double angle){
-        if (!isMoving()){bedAngle = Math.min(bedAngle-angle, minBedAngle);}
+        if (!isMoving()){bedAngle = Math.max(bedAngle-angle, minBedAngle);}
     }
 
     public double getBedAngle(){

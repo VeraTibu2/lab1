@@ -2,8 +2,10 @@ import java.util.*;
 
 public abstract class CarTransport extends Trucks {
 
-    public CarTransport(int initialCapacity){
+    public CarTransport(int initialCapacity, double max, double min){
         capacity = initialCapacity;
+        maxBedAngle = max;
+        minBedAngle = min;
     }
 
     public void move() {

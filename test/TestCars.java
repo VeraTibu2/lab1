@@ -15,9 +15,9 @@ public class TestCars {
     void TestEngineOn(){
         assertEquals(100,v.getEnginePower());
         v.startEngine();
-        assertEquals(0.1,v.currentSpeed);
+        assertEquals(0.1,v.getCurrentSpeed());
         v.stopEngine();
-        assertEquals(0,v.currentSpeed);
+        assertEquals(0,v.getCurrentSpeed());
     }
 
     @Test
