@@ -6,18 +6,21 @@ public abstract class CarTransport extends Trucks {
         capacity = initialCapacity;
         maxBedAngle = max;
         minBedAngle = min;
+        loadedCars = new Stack<>(); //skapar en instansstack
     }
 
     public void move() {
         if (currentRampState == rampState.RAISED) {
-            updatePosition();
+            updatePosition(); //TODO: fel i logiken
+
 
             //Make all loaded cars have the transport's position
-            for(int i=0; i<loadedCars.size();) {
-                Cars carToUpdate = loadedCars.get(i);
+            if (loadedCars.size() > 0){
+                for(int i=0; i<loadedCars.size();) {
+                    Cars carToUpdate = loadedCars.get(i);
 
-                loadedCars.set(i, carToUpdate);
-
+                    loadedCars.set(i, carToUpdate);
+            }
 
             };
         }

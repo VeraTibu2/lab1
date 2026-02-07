@@ -7,7 +7,7 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
     public enum rampState { RAISED, LOWERED; }
     public rampState currentRampState;
     protected int capacity;
-    public Stack<Cars> loadedCars;
+    public Stack<Cars> loadedCars; //denna är null i nu-läget
 
 
 

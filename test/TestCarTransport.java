@@ -23,17 +23,26 @@ public class TestCarTransport {
 
     }
 
+
+    @Test
     void LowerRampAndMove(){
+        T.move();
+        T.raiseBed(30);
+        assertEquals(0, T.getBedAngle());
+
+
         T.currentRampState = Trucks.rampState.LOWERED;
         T.move();
         assertEquals(0, T.getCurrentSpeed());
-
     }
 
+
+
+
     //move
-        //den rör sig när bedangle icke noll
+        // rör sig när bedangle icke noll
         //lastar när den rör sig
-    //Ramp ner om bill stilla
+    //Ramp ner om bil stilla
     //bil rör om ramp upp
     //FILO
     //Transport på Transport
