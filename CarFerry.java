@@ -1,7 +1,9 @@
 import java.util.Deque;
 
-public abstract class CarFerry extends Trucks{
+public abstract class CarFerry{
     public Deque<Cars> Loader;
+    protected int capacity;
+
     public CarFerry(int initialCapacity){
         capacity = initialCapacity;
         
@@ -10,4 +12,5 @@ public abstract class CarFerry extends Trucks{
     public Cars unloadcar(){
         return Loader.pollFirst();
     }
+
 }
