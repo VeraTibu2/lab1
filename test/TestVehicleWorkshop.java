@@ -5,8 +5,16 @@ import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestVehicleWorkshop {
- //TODO: Kan ej göra tester på grund av abstract
+    VolvoWorkshop vWS = new VolvoWorkshop();
+    SaabWorkshop sWS = new SaabWorkshop();
+    Saab95 s = new Saab95();
+    Volvo240 v = new Volvo240();
+    @Test
+    void EntranceForOnlyDesiredCars(){
+        vWS.takeInVehicle(v);
+        sWS.takeInVehicle(s);
 
+    }
 
 
 
