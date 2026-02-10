@@ -1,6 +1,6 @@
 import java.util.*;
 
-public abstract class CarTransport extends Trucks {
+public abstract class CarTransport extends Loadsystem {
 
     public CarTransport(int initialCapacity, double max, double min){
         capacity = initialCapacity;
@@ -15,7 +15,7 @@ public abstract class CarTransport extends Trucks {
 
 
             //Make all loaded cars have the transport's position
-            if (loadedCars.size() > 0){
+            if (!loadedCars.isEmpty()){
                 for(int i=0; i<loadedCars.size();) {
                     Cars carToUpdate = loadedCars.get(i);
 

@@ -6,8 +6,7 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
     public double minBedAngle;
     public enum rampState { RAISED, LOWERED; }
     public rampState currentRampState;
-    protected int capacity;
-    public Stack<Cars> loadedCars; //denna är null i nu-läget
+
 
 
 
@@ -39,16 +38,7 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
     }
 
 
-    public void loadCar(Cars car){
-        if (currentRampState == rampState.LOWERED){loadedCars.push(car);}
-    }
 
-    public Cars unloadCar(){
-        if (currentRampState == rampState.LOWERED) {
-            return loadedCars.pop();
-        }
-        return null;
-    }
 
 }
 
