@@ -5,9 +5,10 @@ public abstract class CarTransport extends Trucks {
     protected int maxCapacity;
     protected int carsStored;
     public CarTransport(int initialCapacity, double minAngle, double maxAngle){
-        super();
         maxCapacity = initialCapacity;
         loadedCars = new LinkedList<>(); //skapar en instanslist
+        minBedAngle = minAngle;
+        maxBedAngle = maxAngle;
     }
 
     public void loadCar(Cars car) {

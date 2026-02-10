@@ -19,7 +19,7 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
 
 
 
-    private boolean isMoving(){
+    protected boolean isMoving(){
         return getCurrentSpeed()>0;
     }
 
