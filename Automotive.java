@@ -36,13 +36,13 @@ public abstract class Automotive extends Vehicle implements Movable {
     }
 
     public final void updatePosition() { //TODO: update position ändras inte
-        double[] dir = getDirection();
+        double[] dir = getDirection(); //Okay so our position doesn't update: First thought, what does getDirection() return?
         x = x + dir[0] * getCurrentSpeed();
         y = y + dir[1] * getCurrentSpeed();
     };
 
     public double[] getDirection(){
-        return direction;
+        return direction;   // Direction declared in Vehicle
     }
 
     public void startEngine(){

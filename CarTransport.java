@@ -1,13 +1,27 @@
 import java.util.*;
 
-public abstract class CarTransport extends Loadsystem {
+public abstract class CarTransport extends Trucks {
+    protected LinkedList<Cars> loadedCars;
+    protected int capacity;
 
-    public CarTransport(int initialCapacity, double max, double min){
+    public CarTransport(int initialCapacity){
         capacity = initialCapacity;
-        maxBedAngle = max;
-        minBedAngle = min;
-        loadedCars = new Stack<>(); //skapar en instansstack
+        loadedCars = new LinkedList<>(); //skapar en instanslist
     }
+
+    public void loadCar(Cars car) {
+        if (currentRampState == rampState.LOWERED) {
+            loadedCars.push(car);
+        }
+    }
+
+    public Cars unloadCar(){
+        if (currentRampState == rampState.LOWERED && !loadedCars.isEmpty()) {
+            return loadedCars.pop();
+        }
+        return null;
+    }
+}
 
     public void move() {
         if (currentRampState == rampState.RAISED) {

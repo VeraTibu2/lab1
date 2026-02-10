@@ -18,7 +18,7 @@ Följande förhållanden ska gälla:
 
 - [x] Vinkeln på flaket kan inte vara lägre än 0 eller högre än 70.
 - [x] Det är bara om lastbilen står stilla som flaket får ha en annan vinkel än 0.
-- [ ] Flaket ska inte kunna höjas om lastbilen är i rörelse; och lastbilen ska inte kunna köra om flaket är uppfällt.
+- [x] Flaket ska inte kunna höjas om lastbilen är i rörelse; och lastbilen ska inte kunna köra om flaket är uppfällt.
 
 - [ ] Lägg allt i Scania.java. Gör minst ett JUnit-test i er testklass.
 
