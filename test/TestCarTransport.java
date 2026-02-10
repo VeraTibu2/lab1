@@ -5,20 +5,23 @@ import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestCarTransport {
-    CarTransport T = new CarTransport(3, 70, 0) {
+    Mack M = new Mack() {
+
         @Override
         protected double speedFactor() {
             return 0;
         }
     };
+
+
     @Test
     void TruckbedAngles(){
 
-        T.raiseBed(100);
-        assertEquals(70, T.getBedAngle());
+        M.raiseBed(100);
+        assertEquals(70, M.getBedAngle());
 
-        T.lowerBed(100);
-        assertEquals(0, T.getBedAngle());
+        M.lowerBed(200);
+        assertEquals(0, M.getBedAngle());
 
 
     }
@@ -26,18 +29,27 @@ public class TestCarTransport {
 
     @Test
     void LowerRampAndMove(){
-        T.move();
-        T.raiseBed(30);
-        assertEquals(0, T.getBedAngle());
+        M.startEngine();
+        M.move();
+        System.out.print(M.getCurrentSpeed());
+        M.raiseBed(50);
+        assertEquals(0, M.getBedAngle());
+
+        double PrevX = M.x;
+        double PrevY = M.y;
 
 
-        T.currentRampState = Trucks.rampState.LOWERED;
-        T.move();
-        assertEquals(0, T.getCurrentSpeed());
+        M.currentRampState = Trucks.rampState.LOWERED;
+        M.move();
+
+        assertEquals(PrevX,M.x);
+        assertEquals(PrevY,M.y);
+
     }
 
 
-
+    @Test
+    void
 
     //move
         // rör sig när bedangle icke noll

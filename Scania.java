@@ -2,15 +2,11 @@ import java.awt.*;
 
 public class Scania extends Trucks {
 
-
-
     public Scania() {
         nrDoors = 2;
         color = Color.red;
         enginePower = 125;
         modelName = "Scania";
-        maxBedAngle = 70;
-        minBedAngle = 0;
         stopEngine();
         x = 0;
         y = 0;

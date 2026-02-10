@@ -2,8 +2,10 @@ import java.util.Stack;
 
 public abstract class Trucks extends Automotive implements AngledBed, Movable {
     private double bedAngle = 0;
-    public final double maxBedAngle = 70;
-    public final double minBedAngle = 0;
+    //public final double maxBedAngle = 70;
+    //public final double minBedAngle = 0;
+    public double maxBedAngle;
+    public double minBedAngle;
     public enum rampState { RAISED, LOWERED; }
     public rampState currentRampState;
 

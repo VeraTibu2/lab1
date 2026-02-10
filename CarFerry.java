@@ -1,14 +1,15 @@
 import java.util.ArrayDeque;
 import java.util.LinkedList;
 
-public abstract class CarFerry{
-    public LinkedList<Cars> Loader;
+public abstract class CarFerry extends Vehicle implements AngledBed{
+    public LinkedList<Cars> loadedCars;
     protected int capacity;
     protected CarTransport Ct;
 
-    public CarFerry(int initialCapacity){
+    public CarFerry(int capacity, double minAngle, double maxAngle){
+        super(initialCapacit)
         capacity = initialCapacity;
-        Loader = new LinkedList<>();
+        loadedCars = new LinkedList<>();
 
         Ct = new CarTransport(capacity) {
             @Override
@@ -19,8 +20,11 @@ public abstract class CarFerry{
 
     }
 
+    public void loadCars(Cars car){
+        loadedCars.push(car);
+    }
     public Cars unloadCar(){
-        return Loader.pollFirst();
+        return Ct.unloadCar();
     }
 
 }
