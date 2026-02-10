@@ -12,7 +12,7 @@ public class TestCarFerry {
     @Test
     void Testcapacity(){
         for(int i = 0; i < F.capacity+1; i++) {
-            F.
+            F.loadCars(v);
         }
         assertEquals(F.capacity, F.loadedCars.size());
 
