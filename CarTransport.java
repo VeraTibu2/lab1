@@ -25,13 +25,9 @@ public abstract class CarTransport extends Trucks {
         return null;
     }
 
-    @Override
-    public boolean isRaised() {
-        return (getBedAngle() == maxBedAngle);
-    }
 
     public void move() {
-        if (currentRampState == rampState.RAISED) {
+        if (currentRampState == rampState.RAISED && isFullyLowered())  {
             updatePosition(); //TODO: fel i logiken (Borde vara åtgärdat)
 
 
@@ -43,7 +39,7 @@ public abstract class CarTransport extends Trucks {
                     carToChange.y = y;
                     loadedCars.set(i, loadedCars.get(i));
                 }
-            };
+            }
         }
 
     }

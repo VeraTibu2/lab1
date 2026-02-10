@@ -28,10 +28,10 @@ public class TestCarTransport {
 
 
     @Test
-    void LowerRampAndMove(){
+    void LowerRampAndMove() {
         M.startEngine();
         M.move();
-        System.out.print(M.getCurrentSpeed());
+
         M.raiseBed(50);
         assertEquals(0, M.getBedAngle());
 
@@ -42,10 +42,27 @@ public class TestCarTransport {
         M.currentRampState = Trucks.rampState.LOWERED;
         M.move();
 
+        assertEquals(PrevX, M.x);
+        assertEquals(PrevY, M.y);
+    }
+
+
+    @Test
+    void  RaiseRampAndMove(){
+        M.currentRampState = Trucks.rampState.RAISED;
+        M.startEngine();
+        M.ResetBedAngle();
+        double PrevX = M.x;
+        double PrevY = M.y;
+
+        M.move();
+
+        assertNotEquals(PrevY,M.y);
         assertEquals(PrevX,M.x);
-        assertEquals(PrevY,M.y);
+
 
     }
+
     Volvo240 V = new Volvo240(); //Car to load and move with
     @Test
     void Un_LoadCarAndMove(){
@@ -60,17 +77,7 @@ public class TestCarTransport {
         assertEquals(V.x, M.x);
         assertEquals(V.y, M.y);
 
-
-
-
     }
 
 
-    //move
-        // rör sig när bedangle icke noll
-        //lastar när den rör sig
-    //Ramp ner om bil stilla
-    //bil rör om ramp upp
-    //FILO
-    //Transport på Transport
 }

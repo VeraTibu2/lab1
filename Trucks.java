@@ -1,5 +1,3 @@
-import java.util.Stack;
-
 public abstract class Trucks extends Automotive implements AngledBed, Movable {
     private double bedAngle = 0;
     //public final double maxBedAngle = 70;
@@ -14,7 +12,7 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
 
     public Trucks() {
         currentRampState = rampState.RAISED;
-
+        bedAngle = maxBedAngle;
     }
 
 
@@ -34,9 +32,10 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
     public double getBedAngle(){
         return bedAngle;
     }
+    public void ResetBedAngle(){bedAngle=0;}
 
-    public boolean isRaised() {
-        return (bedAngle > minBedAngle);
+    public boolean isFullyLowered() {
+        return bedAngle <= minBedAngle;
     }
 
 

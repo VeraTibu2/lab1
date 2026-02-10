@@ -8,14 +8,17 @@ public class Scania extends Trucks {
         enginePower = 125;
         modelName = "Scania";
         stopEngine();
+        maxBedAngle = 70;
+        minBedAngle = 0;
         x = 0;
         y = 0;
+
 
     }
 
 
     public final void move() {
-        if (!isRaised()) {
+        if (isFullyLowered()) {
             updatePosition();
         }
     }
