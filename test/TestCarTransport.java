@@ -39,12 +39,5 @@ public class TestCarTransport {
 
 
 
-    //move
-        // rör sig när bedangle icke noll
-        //lastar när den rör sig
-    //Ramp ner om bil stilla
-    //bil rör om ramp upp
-    //FILO
-    //Transport på Transport
-    //Duplicera position
+
 }
