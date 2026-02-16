@@ -118,7 +118,22 @@ public class CarView extends JFrame{
         turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for
+                for (Automotive i: carC.cars){
+                    if(i instanceof Saab95){
+                        ((Saab95)i ).setTurboOn();
+                    }
+                }
+            }
+        });
+
+        turboOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (Automotive i: carC.cars){
+                    if(i instanceof Saab95){
+                        ((Saab95)i ).setTurboOff();
+                    }
+                }
             }
         });
         // Make the frame pack all it's components by respecting the sizes if possible.
