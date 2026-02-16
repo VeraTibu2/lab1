@@ -25,6 +25,7 @@ public class DrawPanel extends JPanel{
     // TODO: Make this general for all cars
     void moveit(int x, int y){
         //A specific has to move each time
+        //Connect to object2D
     }
 
     // Initializes the panel and reads the images
