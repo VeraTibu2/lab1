@@ -29,6 +29,12 @@ public class CarView extends JFrame{
     int gasAmount = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
 
+    JPanel BreakPanel = new JPanel();
+    JSpinner breakSpinner = new JSpinner();
+    int BreakAmount = 0;
+    JLabel breakLabel = new JLabel("Amount of break");
+
+
     JButton gasButton = new JButton("Gas");
     JButton brakeButton = new JButton("Brake");
     JButton turboOnButton = new JButton("Saab Turbo on");
@@ -75,6 +81,22 @@ public class CarView extends JFrame{
 
         this.add(gasPanel);
 
+        SpinnerModel spinnerModel1 =
+                new SpinnerNumberModel(0,0,100,1);
+        breakSpinner = new JSpinner((spinnerModel1));
+        breakSpinner.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                BreakAmount = (int) ((JSpinner)e.getSource()).getValue();
+            }
+        });
+
+        BreakPanel.setLayout(new BorderLayout());
+        BreakPanel.add(breakLabel, BorderLayout.PAGE_START);
+        BreakPanel.add(breakSpinner, BorderLayout.PAGE_END);
+
+        this.add(BreakPanel);
+
         controlPanel.setLayout(new GridLayout(2,4));
 
         controlPanel.add(gasButton, 0);
@@ -111,7 +133,7 @@ public class CarView extends JFrame{
         brakeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.break(5);
+                carC.Break(BreakAmount);
             }
         });
         // Make the frame pack all it's components by respecting the sizes if possible.
