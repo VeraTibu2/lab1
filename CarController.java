@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /*
@@ -25,11 +26,13 @@ public class CarController {
 
     //methods:
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Instance of this class
         CarController cc = new CarController();
 
         cc.cars.add(new Volvo240());
+        cc.cars.add(new Saab95());
+        cc.cars.add(new Scania());
 
         // Start a new view and send a reference of self
         cc.frame = new CarView("CarSim 1.0", cc);
@@ -47,7 +50,7 @@ public class CarController {
                 car.move();
                 int x = (int) Math.round(car.x);
                 int y = (int) Math.round(car.y);
-                frame.drawPanel.moveit(x, y);
+                frame.drawPanel.moveit(x, y, car);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
             }

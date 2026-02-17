@@ -1,10 +1,11 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
 
 public class Saab95 extends Cars {
 
     public boolean turboOn;
 
-    public Saab95(){
+    public Saab95() {
         nrDoors = 2;
         color = Color.red;
         enginePower = 125;
@@ -12,7 +13,7 @@ public class Saab95 extends Cars {
         modelName = "Saab95";
         stopEngine();
         x = 0;
-        y = 0;
+        y = 100;
     }
 
     public void setTurboOn(){

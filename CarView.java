@@ -19,8 +19,14 @@ public class CarView extends JFrame{
 
     // The controller member
     CarController carC;
+    DrawPanel drawPanel;
+    // Constructor
+    public CarView(String framename, CarController cc){
+        this.carC = cc;
+        this.drawPanel = new DrawPanel(X, Y-240, carC.cars);
+        initComponents(framename);
+    }
 
-    DrawPanel drawPanel = new DrawPanel(X, Y-240);
 
     JPanel controlPanel = new JPanel();
 
@@ -39,11 +45,6 @@ public class CarView extends JFrame{
     JButton startButton = new JButton("Start all cars");
     JButton stopButton = new JButton("Stop all cars");
 
-    // Constructor
-    public CarView(String framename, CarController cc){
-        this.carC = cc;
-        initComponents(framename);
-    }
 
     // Sets everything in place and fits everything
     // TODO: Take a good look and make sure you understand how these methods and components work
@@ -145,6 +146,11 @@ public class CarView extends JFrame{
                 }
             }
         });
+
+
+        //collision with workshop
+        //collision with frameedge
+
         // Make the frame pack all it's components by respecting the sizes if possible.
         this.pack();
 

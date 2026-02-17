@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,6 +10,9 @@ public class TestCars {
 
     Volvo240 v = new Volvo240();
     Saab95 s = new Saab95();
+
+    public TestCars() throws IOException {
+    }
 
 
     @Test
@@ -28,8 +32,8 @@ public class TestCars {
         s.turnRight();
         double[] turned;
         turned = s.getDirection();
-        assertEquals(turned[0], initialDirection[0]);
-        assertEquals(turned[1], initialDirection[1]);
+        assertEquals(turned[1], initialDirection[0]);
+        assertEquals(turned[0], initialDirection[1]);
     }
 
     @Test

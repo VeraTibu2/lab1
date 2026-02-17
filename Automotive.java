@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 import static java.lang.Math.floorMod;
 
@@ -10,6 +11,7 @@ public abstract class Automotive extends Vehicle implements Movable {
     public String modelName; // The car model name
     private int dir_index = 0;
 
+    public BufferedImage Img;
     public final int getNrDoors () { return nrDoors; }
 
     private void updateDirection() {
@@ -83,6 +85,10 @@ public abstract class Automotive extends Vehicle implements Movable {
         else{
             throwRangeError();
         }
+    }
+
+    public void SetImage(BufferedImage Image){
+        this.Img = Image;
     }
 }
 

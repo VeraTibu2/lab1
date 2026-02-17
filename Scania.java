@@ -1,3 +1,4 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
 
 public class Scania extends Trucks {
@@ -13,7 +14,7 @@ public class Scania extends Trucks {
         minBedAngle = 0;
         stopEngine();
         x = 0;
-        y = 0;
+        y = 200;
 
     }
 
