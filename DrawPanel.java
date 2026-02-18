@@ -43,12 +43,18 @@ public class DrawPanel extends JPanel{
 
     }
 
+    public void Collision_with_Workshop(){
+
+    }
+
     // This method is called each time the panel updates/refreshes/repaints itself
     // TODO: Change to suit your needs.
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         for(Automotive i : cars) {
+            Collision_with_Workshop();
+            //Collison with edges
             if(i.x + (i.Img.getWidth()) >= this.getWidth() && Arrays.equals(i.direction, i.directions[1])){
                 i.turnLeft();
                 System.out.println("!");
