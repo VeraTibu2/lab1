@@ -15,7 +15,6 @@ public abstract class Automotive extends Vehicle implements Movable {
     public final int getNrDoors () { return nrDoors; }
 
     private void updateDirection() {
-        dir_index = floorMod(dir_index,4);
         direction = directions[dir_index];
     }
 
@@ -28,12 +27,21 @@ public abstract class Automotive extends Vehicle implements Movable {
     }
 
     public final void turnLeft () {
-        dir_index -=1; //dec Index. Next direction: counter clockwise
+        dir_index = 3;
         updateDirection();
     }
 
     public final void turnRight () {
-        dir_index +=1;
+        dir_index = 1;
+        updateDirection();
+    }
+
+    public final void turnUp () {
+        dir_index = 0;
+        updateDirection();
+    }
+    public final void turnDown () {
+        dir_index = 2;
         updateDirection();
     }
 
@@ -44,7 +52,7 @@ public abstract class Automotive extends Vehicle implements Movable {
     };
 
     public double[] getDirection(){
-        return direction;
+        return this.direction;
     }
 
     public void startEngine(){
