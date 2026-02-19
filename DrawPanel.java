@@ -12,15 +12,41 @@ public class DrawPanel extends JPanel{
 
     // Just a single image, TODO: Generalize
     ArrayList<Automotive> cars;
-
-
+    CollisionHandler CHandler;
+    VolvoWorkshop vWS = new VolvoWorkshop();
 
     BufferedImage volvoWorkshopImage;
-    Point volvoWorkshopPoint = new Point(300,300);
+
 
     // TODO: Make this general for all cars
     void moveit(int x, int y, Automotive car){
         
+    }
+
+    public void SetPosition(){
+        int ypos = 0;
+        for(Automotive i: cars){
+            i.setPosition(0,ypos);
+            ypos = ypos + 100;
+        }
+
+        vWS.setPosition(300,300);
+    }
+
+    public void SetComponentsImg(){
+        try {
+            for(Automotive i : this.cars){
+                BufferedImage img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/" + i.modelName + ".jpg"));
+                i.SetImage(img);
+            }
+
+            BufferedImage VWS_Img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/VolvoBrand.jpg"));
+            vWS.SetImg(VWS_Img);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     // Initializes the panel and reads the images
@@ -29,23 +55,14 @@ public class DrawPanel extends JPanel{
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
         // Print an error message in case file is not found with a try/catch block
+        this.CHandler = new CollisionHandler(this.vWS, cars);
         this.cars = cars;
 
-        try {
-            for(Automotive i : this.cars){
-                BufferedImage img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/" + i.modelName + ".jpg"));
-                i.SetImage(img);
-            }
-            volvoWorkshopImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/VolvoBrand.jpg"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        SetPosition();
+        SetComponentsImg();
 
     }
 
-    public void Collision_with_Workshop(){
-
-    }
 
     // This method is called each time the panel updates/refreshes/repaints itself
     // TODO: Change to suit your needs.
@@ -53,28 +70,14 @@ public class DrawPanel extends JPanel{
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         for(Automotive i : cars) {
-            Collision_with_Workshop();
-            //Collison with edges
-            if(i.x + (i.Img.getWidth()) >= this.getWidth() && Arrays.equals(i.direction, i.directions[1])){
-                i.turnLeft();
-                System.out.println("!");
+            if(i instanceof Volvo240) {
+                CHandler.WorkshopCollision((Volvo240) i);
             }
-            else if(i.x <= 0 && i.getDirection() == i.directions[3]){
-                i.turnRight();
-            }
-
-            if(i.y + (i.Img.getHeight()) >= this.getHeight() && Arrays.equals(i.direction, i.directions[2])){
-                i.turnUp();
-            }
-            else if(i.y <= 0 && i.getDirection() == i.directions[0]){
-                i.turnDown();
-            }
-
-
+            CHandler.EdgeCollison(i,this.getWidth(), this.getHeight());
 
             g.drawImage(i.Img, (int) i.x, (int) i.y, null); // see javadoc for more info on the parameters
         }
-        g.drawImage(volvoWorkshopImage, volvoWorkshopPoint.x, volvoWorkshopPoint.y, null);
+        g.drawImage(vWS.Img, (int) vWS.x, (int) vWS.y, null);
 
     }
 }

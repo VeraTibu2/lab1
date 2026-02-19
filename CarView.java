@@ -148,9 +148,6 @@ public class CarView extends JFrame{
         });
 
 
-        //collision with workshop
-        //collision with frameedge
-
         // Make the frame pack all it's components by respecting the sizes if possible.
         this.pack();
 

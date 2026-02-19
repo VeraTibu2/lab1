@@ -14,7 +14,7 @@ public class Scania extends Trucks {
         minBedAngle = 0;
         stopEngine();
         x = 0;
-        y = 200;
+        y = 0;
 
     }
 
