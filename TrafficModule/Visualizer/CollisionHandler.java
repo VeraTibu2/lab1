@@ -1,3 +1,8 @@
+package TrafficModule.Visualizer;
+
+import TrafficModule.Workshops.WorkshopTypes.VolvoWorkshop;
+import TrafficModule.VehiclesModule.Automotive;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -5,10 +10,14 @@ public class CollisionHandler {
     VolvoWorkshop WS;
     ArrayList<Automotive> cars;
     private boolean collide = true;
+
+
     public CollisionHandler(VolvoWorkshop WS, ArrayList<Automotive> cars){
         this.WS = WS;
         this.cars = cars;
     }
+
+
     public void EdgeCollison(Automotive i, int width, int height){
         //Horizontal
         if(i.x + (i.Img.getWidth()) >= width && Arrays.equals(i.direction, i.directions[1])){

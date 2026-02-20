@@ -1,6 +1,8 @@
+import TrafficModule.Workshops.WorkshopTypes.AllWorkshop;
+import TrafficModule.Workshops.WorkshopTypes.SaabWorkshop;
+import TrafficModule.Workshops.WorkshopTypes.VolvoWorkshop;
+import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Saab95;
 import org.junit.jupiter.api.Test;
-
-import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 

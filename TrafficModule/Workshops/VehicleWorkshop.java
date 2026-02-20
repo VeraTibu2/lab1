@@ -1,11 +1,15 @@
+package TrafficModule.Workshops;
+
+import TrafficModule.Visualizer.Positions.Object2D;
+
 import java.awt.image.BufferedImage;
 import java.util.*;
 
 // A Generic vehicle workshop class, for vehicles of a specific class
-// VehicleWorkshop carWorkshop = new VehicleWorkshop<Cars>();
-public abstract class VehicleWorkshop<C extends Object2D> extends Object2D{
+// TrafficModule.Workshops.VehicleWorkshop carWorkshop = new TrafficModule.Workshops.VehicleWorkshop<CarsModule.Cars>();
+public abstract class VehicleWorkshop<C extends Object2D> extends Object2D {
     private ArrayList<C> storedVehicles;
-    BufferedImage Img;
+    public BufferedImage Img;
 
     public VehicleWorkshop() {
         super();

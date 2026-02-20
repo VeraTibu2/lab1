@@ -1,0 +1,7 @@
+package TrafficModule.VehiclesModule;
+
+public interface Movable {
+    void move();
+    void turnLeft();
+    void turnRight();
+}

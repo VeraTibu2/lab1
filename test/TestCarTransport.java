@@ -1,8 +1,6 @@
+import TrafficModule.VehiclesModule.TrucksHandler.CarTransport;
+import TrafficModule.VehiclesModule.TrucksHandler.Trucks;
 import org.junit.jupiter.api.Test;
-
-import java.awt.*;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class TestCarTransport {
     CarTransport T = new CarTransport(3, 70, 0) {

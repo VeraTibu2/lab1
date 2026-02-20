@@ -1,3 +1,5 @@
+package TrafficModule.VehiclesModule;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 

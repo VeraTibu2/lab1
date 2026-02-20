@@ -1,3 +1,5 @@
+package TrafficModule.VehiclesModule;
+
 import java.util.Deque;
 
 public abstract class CarFerry{

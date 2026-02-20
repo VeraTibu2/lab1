@@ -2,16 +2,16 @@
 
 Börja med att forka och klona repot https://github.com/oopd-gu-chalmers/lab2 Links to an external site.. Där hittar ni bland annat några nya klassfiler. Notera att de nya klasserna har många allvarliga brister vad gäller både design och implementation. Se till att ni får med "pics"-mappen, bilderna och de nya klass-filer ni ser i repot.
 
-CarController, CarView och DrawPanel utgör tillsammans ett grafiskt användargränssnitt till era fordonsklasser från laboration 1. Gränssnittet är skrivet av en tredje part som inte haft tillgång till vare sig kod, dokumentation eller designdokument för er lösning.
+Visualizer.CarController, Visualizer.CarView och Visualizer.DrawPanel utgör tillsammans ett grafiskt användargränssnitt till era fordonsklasser från laboration 1. Gränssnittet är skrivet av en tredje part som inte haft tillgång till vare sig kod, dokumentation eller designdokument för er lösning.
 
-- Gör de eventuella (minimala) ändringar i CarController, CarView och DrawPanel som behövs för att det ska gå att använda tillsammans med er lösning från laboration 1.
+- Gör de eventuella (minimala) ändringar i Visualizer.CarController, Visualizer.CarView och Visualizer.DrawPanel som behövs för att det ska gå att använda tillsammans med er lösning från laboration 1.
 
-- Kör CarController och se Volvo-bilen röra sig (genom att öka värdet på gasen och gasa).
+- Kör Visualizer.CarController och se Volvo-bilen röra sig (genom att öka värdet på gasen och gasa).
 
-- Se till att även bromsknappen är kopplad till bilen, så att den får effekt på er simulation (bromsvärdet får ni från samma snurra som gasen hämtar sitt värde ifrån). Ni måste se till att modellens tillstånd uppdateras, och sen anropar tillbaka till CarView via CarController.
+- Se till att även bromsknappen är kopplad till bilen, så att den får effekt på er simulation (bromsvärdet får ni från samma snurra som gasen hämtar sitt värde ifrån). Ni måste se till att modellens tillstånd uppdateras, och sen anropar tillbaka till Visualizer.CarView via Visualizer.CarController.
 
 - Volvon åker just nu ut ur rutan. Se till att när bilen nuddar en vägg så stoppar den helt, inverterar sin riktning och startar igen.
-    Sätt in Saab95, Scania och deras respektive bilder med 100 pixlars avstånd i Y-led från varandra (alla avbildas ursprungligen med X=0). Koppla turbo-knapparna till Saaben och flakknapparna till Scania. Koppla "starta och stoppa alla bilar"-knapparna till bägge. Även dessa bilar ska förhindras att åka utanför rutan.
+    Sätt in VehiclesModule.CarsHandler.CarTypes.Saab95, VehiclesModule.TrucksHandler.Trucktypes.Scania och deras respektive bilder med 100 pixlars avstånd i Y-led från varandra (alla avbildas ursprungligen med X=0). Koppla turbo-knapparna till Saaben och flakknapparna till VehiclesModule.TrucksHandler.Trucktypes.Scania. Koppla "starta och stoppa alla bilar"-knapparna till bägge. Även dessa bilar ska förhindras att åka utanför rutan.
     Skapa en workshop för Volvo-bilar, och koppla denna till utritningen. Se till att när en Volvo-bil åker till (dvs "krockar med") verkstaden "lastas" den i verkstaden. Andra bilar ska inte lastas (välj själva hur ni vill hantera detta).
 
 

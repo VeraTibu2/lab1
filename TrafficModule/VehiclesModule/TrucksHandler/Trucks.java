@@ -1,3 +1,8 @@
+package TrafficModule.VehiclesModule.TrucksHandler;
+
+import TrafficModule.VehiclesModule.Automotive;
+import TrafficModule.VehiclesModule.CarsHandler.Cars;
+
 import java.util.Stack;
 
 public abstract class Trucks extends Automotive implements AngledBed, Movable {

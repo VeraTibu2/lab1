@@ -1,3 +1,7 @@
+package TrafficModule.VehiclesModule.TrucksHandler;
+
+import TrafficModule.VehiclesModule.CarsHandler.Cars;
+
 import java.util.*;
 
 public abstract class CarTransport extends Trucks {
@@ -10,7 +14,7 @@ public abstract class CarTransport extends Trucks {
     }
 
     public void move() {
-        if (currentRampState == rampState.RAISED) {
+        if (currentRampState == Trucks.rampState.RAISED) {
             updatePosition(); //TODO: fel i logiken
 
 

@@ -1,4 +1,7 @@
-import javax.imageio.ImageIO;
+package TrafficModule.VehiclesModule.CarsHandler.CarTypes;
+
+import TrafficModule.VehiclesModule.CarsHandler.Cars;
+
 import java.awt.*;
 
 public class Saab95 extends Cars {
@@ -10,7 +13,7 @@ public class Saab95 extends Cars {
         color = Color.red;
         enginePower = 125;
 	    turboOn = false;
-        modelName = "Saab95";
+        modelName = "VehiclesModule.CarsModule.CarTypes.Saab95";
         stopEngine();
         x = 0;
         y = 0;

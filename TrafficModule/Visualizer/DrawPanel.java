@@ -1,8 +1,11 @@
+package TrafficModule.Visualizer;
+
+import TrafficModule.Workshops.WorkshopTypes.VolvoWorkshop;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -54,7 +57,6 @@ public class DrawPanel extends JPanel{
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
-        // Print an error message in case file is not found with a try/catch block
         this.CHandler = new CollisionHandler(this.vWS, cars);
         this.cars = cars;
 
