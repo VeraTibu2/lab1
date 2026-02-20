@@ -1,8 +1,8 @@
-package TrafficModule.VehiclesModule.TrucksHandler;
+package VehiclesModule.TrucksHandler;
 
-import TrafficModule.VehiclesModule.Automotive;
-import TrafficModule.VehiclesModule.CarsHandler.Cars;
-import TrafficModule.VehiclesModule.Movable;
+import VehiclesModule.Automotive;
+import VehiclesModule.CarsHandler.Cars;
+import VehiclesModule.Movable;
 
 import java.util.Stack;
 

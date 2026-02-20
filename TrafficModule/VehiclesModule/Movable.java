@@ -1,4 +1,4 @@
-package TrafficModule.VehiclesModule;
+package VehiclesModule;
 
 public interface Movable {
     void move();

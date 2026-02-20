@@ -1,6 +1,6 @@
-package TrafficModule.VehiclesModule.CarsHandler.CarTypes;
+package VehiclesModule.CarsHandler.CarTypes;
 
-import TrafficModule.VehiclesModule.CarsHandler.Cars;
+import VehiclesModule.CarsHandler.Cars;
 
 import java.awt.*;
 
@@ -12,7 +12,7 @@ public class Volvo240 extends Cars {
         nrDoors = 4;
         color = Color.black;
         enginePower = 100;
-        modelName = "CarsModule.Cars.Volvo240";
+        modelName = "Volvo240";
         stopEngine();
         x = 0;
         y = 0;

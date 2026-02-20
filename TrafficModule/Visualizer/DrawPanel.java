@@ -1,8 +1,9 @@
-package TrafficModule.Visualizer;
+package Visualizer;
 
-import TrafficModule.VehiclesModule.Automotive;
-import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Volvo240;
-import TrafficModule.Workshops.WorkshopTypes.VolvoWorkshop;
+import VehiclesModule.Automotive;
+import VehiclesModule.CarsHandler.CarTypes.Volvo240;
+import Workshops.WorkshopTypes.VolvoWorkshop;
+import Visualizer.CollisionHandler;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -41,11 +42,13 @@ public class DrawPanel extends JPanel{
     public void SetComponentsImg(){
         try {
             for(Automotive i : this.cars){
-                BufferedImage img = ImageIO.read(DrawPanel.class.getResourceAsStream("TrafficModule/Visualizer/pics/" + i.modelName + ".jpg"));
+                System.out.println(i.modelName);
+                BufferedImage img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/" + i.modelName + ".jpg"));
+
                 i.SetImage(img);
             }
 
-            BufferedImage VWS_Img = ImageIO.read(DrawPanel.class.getResourceAsStream("TrafficModule/Visualizer/pics/VolvoBrand.jpg"));
+            BufferedImage VWS_Img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/VolvoBrand.jpg"));
             vWS.SetImg(VWS_Img);
 
         } catch (IOException e) {

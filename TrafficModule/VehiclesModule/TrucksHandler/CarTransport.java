@@ -1,10 +1,10 @@
-package TrafficModule.VehiclesModule.TrucksHandler;
+package VehiclesModule.TrucksHandler;
 
-import TrafficModule.VehiclesModule.CarsHandler.Cars;
-
+import VehiclesModule.CarsHandler.Cars;
+import VehiclesModule.TrucksHandler.Trucks;
 import java.util.*;
 
-public abstract class CarTransport extends Trucks {
+public abstract class CarTransport extends  Trucks{
 
     public CarTransport(int initialCapacity, double max, double min){
         capacity = initialCapacity;

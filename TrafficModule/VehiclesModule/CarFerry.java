@@ -1,6 +1,6 @@
-package TrafficModule.VehiclesModule;
+package VehiclesModule;
 
-import TrafficModule.VehiclesModule.CarsHandler.Cars;
+import VehiclesModule.CarsHandler.Cars;
 
 import java.util.Deque;
 

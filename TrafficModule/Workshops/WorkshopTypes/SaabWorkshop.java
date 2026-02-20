@@ -1,7 +1,7 @@
-package TrafficModule.Workshops.WorkshopTypes;
+package Workshops.WorkshopTypes;
 
-import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Saab95;
-import TrafficModule.Workshops.VehicleWorkshop;
+import Workshops.VehicleWorkshop;
+import VehiclesModule.CarsHandler.CarTypes.Saab95;
 
 public class SaabWorkshop extends VehicleWorkshop<Saab95> {
 

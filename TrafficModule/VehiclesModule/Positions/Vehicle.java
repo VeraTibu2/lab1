@@ -1,4 +1,4 @@
-package TrafficModule.VehiclesModule.Positions;
+package VehiclesModule.Positions;
 
 public abstract class Vehicle extends Object2D {
     public double[] direction = {0,1};

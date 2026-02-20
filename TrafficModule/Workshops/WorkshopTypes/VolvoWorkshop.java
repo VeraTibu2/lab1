@@ -1,7 +1,7 @@
-package TrafficModule.Workshops.WorkshopTypes;
+package Workshops.WorkshopTypes;
 
-import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Volvo240;
-import TrafficModule.Workshops.VehicleWorkshop;
+import VehiclesModule.CarsHandler.CarTypes.Volvo240;
+import Workshops.VehicleWorkshop;
 
 public class VolvoWorkshop extends VehicleWorkshop<Volvo240> {
 

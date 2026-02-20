@@ -1,7 +1,7 @@
-package TrafficModule.VehiclesModule;
+package VehiclesModule;
 
-import TrafficModule.VehiclesModule.Positions.Vehicle;
-
+import VehiclesModule.Positions.Vehicle;
+import VehiclesModule.Movable;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 

@@ -1,6 +1,6 @@
-package TrafficModule.VehiclesModule.CarsHandler.CarTypes;
+package VehiclesModule.CarsHandler.CarTypes;
 
-import TrafficModule.VehiclesModule.CarsHandler.Cars;
+import VehiclesModule.CarsHandler.Cars;
 
 import java.awt.*;
 
@@ -13,7 +13,7 @@ public class Saab95 extends Cars {
         color = Color.red;
         enginePower = 125;
 	    turboOn = false;
-        modelName = "VehiclesModule.CarsModule.CarTypes.Saab95";
+        modelName = "Saab95";
         stopEngine();
         x = 0;
         y = 0;

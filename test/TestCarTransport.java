@@ -1,5 +1,5 @@
-import TrafficModule.VehiclesModule.TrucksHandler.CarTransport;
-import TrafficModule.VehiclesModule.TrucksHandler.Trucks;
+import VehiclesModule.TrucksHandler.CarTransport;
+import VehiclesModule.TrucksHandler.Trucks;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

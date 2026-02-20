@@ -1,9 +1,9 @@
-package TrafficModule.Visualizer;
+package Visualizer;
 
-import TrafficModule.VehiclesModule.Automotive;
-import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Saab95;
-import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Volvo240;
-import TrafficModule.VehiclesModule.TrucksHandler.Trucktypes.Scania;
+import VehiclesModule.Automotive;
+import VehiclesModule.CarsHandler.CarTypes.Saab95;
+import VehiclesModule.CarsHandler.CarTypes.Volvo240;
+import VehiclesModule.TrucksHandler.Trucktypes.Scania;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -28,7 +28,7 @@ public class CarController {
     // The frame that represents this instance View of the MVC pattern
     CarView frame;
     // A list of cars, modify if needed
-    ArrayList<Automotive> cars = new ArrayList<>();
+    public ArrayList<Automotive> cars = new ArrayList<>();
 
     //methods:
 
@@ -64,7 +64,7 @@ public class CarController {
     }
 
     // Calls the gas method for each car once
-    void gas(int amount) {
+    public void gas(int amount) {
         double gas = ((double) amount) / 100;
        for (Automotive car : cars
                 ) {
@@ -72,7 +72,7 @@ public class CarController {
        }
     }
 
-    void Break(int amount) {
+    public void Break(int amount) {
         double Br = ((double) amount) / 100;
         for (Automotive car : cars) {
             car.brake(Br);

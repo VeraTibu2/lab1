@@ -1,7 +1,7 @@
-package TrafficModule.VehiclesModule.CarsHandler;
+package VehiclesModule.CarsHandler;
 
-import TrafficModule.VehiclesModule.Automotive;
-import TrafficModule.VehiclesModule.Movable;
+import VehiclesModule.Automotive;
+import VehiclesModule.Movable;
 
 import java.awt.*;
 

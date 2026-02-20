@@ -1,6 +1,6 @@
-package TrafficModule.Workshops;
+package Workshops;
 
-import TrafficModule.VehiclesModule.Positions.Object2D;
+import VehiclesModule.Positions.Object2D;
 
 import java.awt.image.BufferedImage;
 import java.util.*;
