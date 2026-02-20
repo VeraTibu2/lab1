@@ -41,11 +41,11 @@ public class DrawPanel extends JPanel{
     public void SetComponentsImg(){
         try {
             for(Automotive i : this.cars){
-                BufferedImage img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/" + i.modelName + ".jpg"));
+                BufferedImage img = ImageIO.read(DrawPanel.class.getResourceAsStream("TrafficModule/Visualizer/pics/" + i.modelName + ".jpg"));
                 i.SetImage(img);
             }
 
-            BufferedImage VWS_Img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/VolvoBrand.jpg"));
+            BufferedImage VWS_Img = ImageIO.read(DrawPanel.class.getResourceAsStream("TrafficModule/Visualizer/pics/VolvoBrand.jpg"));
             vWS.SetImg(VWS_Img);
 
         } catch (IOException e) {
