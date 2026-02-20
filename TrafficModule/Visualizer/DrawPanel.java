@@ -44,8 +44,8 @@ public class DrawPanel extends JPanel{
         try {
             for(Automotive i : this.cars){
                 System.out.println(i.modelName);
-                System.out.println(DrawPanel.class.getResource("/pics/" + .jpg"));
-                BufferedImage img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream( i.modelName + ".jpg")));
+                System.out.println(DrawPanel.class.getResource("/pics/" + i.modelName + ".jpg"));
+                BufferedImage img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream("/pics/" + i.modelName + ".jpg")));
 
                 i.SetImage(img);
             }
