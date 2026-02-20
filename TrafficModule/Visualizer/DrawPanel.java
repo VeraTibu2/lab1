@@ -50,7 +50,7 @@ public class DrawPanel extends JPanel{
                 i.SetImage(img);
             }
 
-            BufferedImage VWS_Img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream("VolvoBrand.jpg")));
+            BufferedImage VWS_Img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream("/pics/VolvoBrand.jpg")));
             vWS.SetImg(VWS_Img);
 
         } catch (IOException e) {

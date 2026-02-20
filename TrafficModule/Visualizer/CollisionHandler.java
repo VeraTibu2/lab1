@@ -3,7 +3,7 @@ package Visualizer;
 import VehiclesModule.CarsHandler.CarTypes.Volvo240;
 import Workshops.WorkshopTypes.VolvoWorkshop;
 import VehiclesModule.Automotive;
-import VehiclesModule.CarsHandler.CarTypes.Volvo240;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,7 +41,6 @@ public class CollisionHandler {
     public void WorkshopCollision(Volvo240 i){
         //if true
         if(collide && cars.contains(i)) {
-            cars.remove(i);
             WS.takeInVehicle(i);
         }
     }
