@@ -1,5 +1,7 @@
 package TrafficModule.Visualizer;
 
+import TrafficModule.VehiclesModule.Automotive;
+import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Volvo240;
 import TrafficModule.Workshops.WorkshopTypes.VolvoWorkshop;
 
 import java.awt.*;

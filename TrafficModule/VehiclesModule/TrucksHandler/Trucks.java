@@ -2,6 +2,7 @@ package TrafficModule.VehiclesModule.TrucksHandler;
 
 import TrafficModule.VehiclesModule.Automotive;
 import TrafficModule.VehiclesModule.CarsHandler.Cars;
+import TrafficModule.VehiclesModule.Movable;
 
 import java.util.Stack;
 

@@ -1,6 +1,7 @@
 package TrafficModule.VehiclesModule.CarsHandler;
 
 import TrafficModule.VehiclesModule.Automotive;
+import TrafficModule.VehiclesModule.Movable;
 
 import java.awt.*;
 

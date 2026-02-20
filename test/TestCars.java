@@ -1,4 +1,5 @@
 import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Saab95;
+import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Volvo240;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;

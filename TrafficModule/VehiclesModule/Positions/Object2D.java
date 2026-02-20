@@ -1,4 +1,4 @@
-package TrafficModule.Visualizer.Positions;
+package TrafficModule.VehiclesModule.Positions;
 
 public abstract class Object2D {
     public double x; // xcord

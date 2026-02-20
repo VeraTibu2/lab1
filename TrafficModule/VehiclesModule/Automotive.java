@@ -1,12 +1,14 @@
 package TrafficModule.VehiclesModule;
 
+import TrafficModule.VehiclesModule.Positions.Vehicle;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 import static java.lang.Math.floorMod;
 
 public abstract class Automotive extends Vehicle implements Movable {
-    protected int nrDoors;
+    public int nrDoors;
     protected double enginePower;
     private double currentSpeed; // The current speed of the car
     public Color color; // Color of the car

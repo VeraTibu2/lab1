@@ -1,5 +1,10 @@
 package TrafficModule.Visualizer;
 
+import TrafficModule.VehiclesModule.Automotive;
+import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Saab95;
+import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Volvo240;
+import TrafficModule.VehiclesModule.TrucksHandler.Trucktypes.Scania;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -51,7 +56,7 @@ public class CarController {
                 car.move();
                 int x = (int) Math.round(car.x);
                 int y = (int) Math.round(car.y);
-                frame.drawPanel.moveit(x, y, car);
+                //frame.drawPanel.moveit(x, y, car);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
             }

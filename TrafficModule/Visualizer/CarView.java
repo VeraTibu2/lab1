@@ -1,5 +1,8 @@
 package TrafficModule.Visualizer;
 
+import TrafficModule.VehiclesModule.Automotive;
+import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Saab95;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;

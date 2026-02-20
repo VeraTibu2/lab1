@@ -1,3 +1,4 @@
+import TrafficModule.VehiclesModule.CarsHandler.CarTypes.Volvo240;
 import TrafficModule.Workshops.WorkshopTypes.AllWorkshop;
 import TrafficModule.Workshops.WorkshopTypes.SaabWorkshop;
 import TrafficModule.Workshops.WorkshopTypes.VolvoWorkshop;
