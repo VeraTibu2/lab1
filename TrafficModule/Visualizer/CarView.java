@@ -160,7 +160,7 @@ public class CarView extends JFrame{
                 for(Automotive i : carC.cars){
                     if( i instanceof Scania) {
                         ((Scania) i).raiseBed(30);
-                        System.out.println("Bed Lifted!");
+                        System.out.println("Bed Lifted!" + ((Scania) i).getBedAngle());
                     }
                 }
             }
@@ -173,7 +173,8 @@ public class CarView extends JFrame{
                     if(i instanceof Scania) {
 
                         ((Scania) i).lowerBed(30);
-                        System.out.println("Bed lowered!");
+                   ;
+                        System.out.println("Bed lowered!" +  ((Scania) i).getBedAngle());
                     }
                 }
             }
