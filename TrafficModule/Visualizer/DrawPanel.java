@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -43,12 +44,13 @@ public class DrawPanel extends JPanel{
         try {
             for(Automotive i : this.cars){
                 System.out.println(i.modelName);
-                BufferedImage img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/" + i.modelName + ".jpg"));
+                System.out.println(DrawPanel.class.getResource("/pics/" + .jpg"));
+                BufferedImage img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream( i.modelName + ".jpg")));
 
                 i.SetImage(img);
             }
 
-            BufferedImage VWS_Img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/VolvoBrand.jpg"));
+            BufferedImage VWS_Img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream("VolvoBrand.jpg")));
             vWS.SetImg(VWS_Img);
 
         } catch (IOException e) {

@@ -2,8 +2,7 @@ package Visualizer;
 
 import VehiclesModule.Automotive;
 import VehiclesModule.CarsHandler.CarTypes.Saab95;
-import Visualizer.CarController;
-import Visualizer.DrawPanel;
+
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
