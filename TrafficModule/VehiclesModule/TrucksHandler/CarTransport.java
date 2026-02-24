@@ -1,6 +1,10 @@
+package VehiclesModule.TrucksHandler;
+
+import VehiclesModule.CarsHandler.Cars;
+import VehiclesModule.TrucksHandler.Trucks;
 import java.util.*;
 
-public abstract class CarTransport extends Trucks {
+public abstract class CarTransport extends  Trucks{
 
     public CarTransport(int initialCapacity, double max, double min){
         capacity = initialCapacity;
@@ -10,8 +14,8 @@ public abstract class CarTransport extends Trucks {
     }
 
     public void move() {
-        if (currentRampState == rampState.RAISED) {
-            updatePosition(); //TODO: fel i logiken
+        if (currentRampState == Trucks.rampState.RAISED) {
+            updatePosition();
 
 
             //Make all loaded cars have the transport's position

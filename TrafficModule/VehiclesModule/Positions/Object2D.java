@@ -1,4 +1,4 @@
-import java.util.Vector;
+package VehiclesModule.Positions;
 
 public abstract class Object2D {
     public double x; // xcord
@@ -14,10 +14,6 @@ public abstract class Object2D {
     public void setPosition(double newX, double newY){
         this.x = newX;
         this.y = newY;
-    }
-
-    public void setPosition(double[] pos){
-
     }
 
 }

@@ -1,3 +1,9 @@
+package VehiclesModule.TrucksHandler;
+
+import VehiclesModule.Automotive;
+import VehiclesModule.CarsHandler.Cars;
+import VehiclesModule.Movable;
+
 import java.util.Stack;
 
 public abstract class Trucks extends Automotive implements AngledBed, Movable {
@@ -7,7 +13,7 @@ public abstract class Trucks extends Automotive implements AngledBed, Movable {
     public enum rampState { RAISED, LOWERED; }
     public rampState currentRampState;
     protected int capacity;
-    public Stack<Cars> loadedCars; //denna är null i nu-läget
+    public Stack<Cars> loadedCars;
 
 
 

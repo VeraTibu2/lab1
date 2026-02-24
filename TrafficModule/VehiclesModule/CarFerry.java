@@ -1,3 +1,7 @@
+package VehiclesModule;
+
+import VehiclesModule.CarsHandler.Cars;
+
 import java.util.Deque;
 
 public abstract class CarFerry{

@@ -1,8 +1,8 @@
+import VehiclesModule.TrucksHandler.CarTransport;
+import VehiclesModule.TrucksHandler.Trucks;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class TestCarTransport {
     CarTransport T = new CarTransport(3, 70, 0) {
@@ -15,10 +15,10 @@ public class TestCarTransport {
     void TruckbedAngles(){
 
         T.raiseBed(100);
-        assertEquals(70, T.getBedAngle());
+        Assertions.assertEquals(70, T.getBedAngle());
 
         T.lowerBed(100);
-        assertEquals(0, T.getBedAngle());
+        Assertions.assertEquals(0, T.getBedAngle());
 
 
     }
@@ -28,12 +28,12 @@ public class TestCarTransport {
     void LowerRampAndMove(){
         T.move();
         T.raiseBed(30);
-        assertEquals(0, T.getBedAngle());
+        Assertions.assertEquals(0, T.getBedAngle());
 
 
         T.currentRampState = Trucks.rampState.LOWERED;
         T.move();
-        assertEquals(0, T.getCurrentSpeed());
+        Assertions.assertEquals(0, T.getCurrentSpeed());
     }
 
 

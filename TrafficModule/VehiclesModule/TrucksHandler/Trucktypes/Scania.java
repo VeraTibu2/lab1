@@ -1,3 +1,7 @@
+package VehiclesModule.TrucksHandler.Trucktypes;
+
+import VehiclesModule.TrucksHandler.Trucks;
+
 import java.awt.*;
 
 public class Scania extends Trucks {

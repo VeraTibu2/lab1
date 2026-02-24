@@ -1,10 +1,14 @@
+package VehiclesModule.CarsHandler.CarTypes;
+
+import VehiclesModule.CarsHandler.Cars;
+
 import java.awt.*;
 
 public class Saab95 extends Cars {
 
     public boolean turboOn;
 
-    public Saab95(){
+    public Saab95() {
         nrDoors = 2;
         color = Color.red;
         enginePower = 125;
