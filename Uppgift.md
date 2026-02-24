@@ -1,90 +1,54 @@
-## Uppgift 1: Koppla på grafiskt gränssnitt
+Uppgift 1: Refaktorisera
 
-Börja med att forka och klona repot https://github.com/oopd-gu-chalmers/lab2.
+Gör de förändringar som ni identifierat i del 3, i enlighet med er refaktoreringsplan.
 
-Där hittar ni bland annat några nya klassfiler. Notera att de nya klasserna har många allvarliga brister vad gäller både design och implementation.
+Uppgift 2: Model-View-Controller
 
-Model.CarModel, Visualizer.CarView och Visualizer.DrawPanel utgör tillsammans ett grafiskt användargränssnitt till era fordonsklasser från laboration 1.
-Gränssnittet är skrivet av en tredje part som inte haft tillgång till vare sig kod, dokumentation eller designdokument för er lösning.
+Användargränssnittet ni utgick från i del 3 var en ansats till implementation av Model-View-Controller Pattern, men där gränsdragningen mellan model, view, controller och applikation inte var något vidare genomtänkt (för att inte säga usel).
 
-- [ ] Gör de eventuella (minimala) ändringar i Model.CarModel,
-
-- [ ] Visualizer.CarView och Visualizer.DrawPanel som behövs för att det ska gå att använda tillsammans med er lösning från laboration 1.
-
-- [ ] Kör Model.CarModel och se Volvo-bilen röra sig (genom att öka värdet på gasen och gasa).
-
-- Se till att även bromsknappen är kopplad till bilen, så att den får effekt på er simulation (bromsvärdet får ni från samma snurra som gasen hämtar sitt värde ifrån).
-  - Ni måste se till att modellens tillstånd uppdateras, och sen anropar tillbaka till Visualizer.CarView via Model.CarModel.
-
-- [ ] Se till att när bilen nuddar en vägg så stoppar den helt, inverterar sin riktning och startar igen.
-  Sätt in VehiclesModule.CarsHandler.CarTypes.Saab95, VehiclesModule.TrucksHandler.Trucktypes.Scania
-  och deras respektive bilder med 100 pixlars avstånd i Y-led från varandra (alla avbildas ursprungligen med X=0).
-- [ ] Koppla turbo-knapparna till Saaben och flakknapparna till VehiclesModule.TrucksHandler.Trucktypes.Scania.
-- [ ] Koppla "starta och stoppa alla bilar"-knapparna till bägge. Även dessa bilar ska förhindras att åka utanför rutan.
-- [ ] Skapa en workshop för Volvo-bilar, och koppla denna till utritningen.
-  Se till att när en Volvo-bil åker till (dvs "krockar med") verkstaden "lastas" den i verkstaden.
-  Andra bilar ska inte lastas (välj själva hur ni vill hantera detta).
+    Vilka avvikelser från MVC-idealet kan ni identifiera i det ursprungliga användargränssnittet? Vad borde ha gjorts smartare, dummare eller tunnare?
+    Vilka av dessa brister åtgärdade ni med er nya design från del 3? Hur då? Vilka brister åtgärdade ni inte?
+    Rita ett nytt UML-diagram som beskriver en förbättrad design med avseende på MVC.
 
 
-## Uppgift 2: Beroenden
+Uppgift 3: Fler designmönster
 
-    Rita upp ett UML-diagram över systemet i dess nuvarande skick, efter era förändringar ovan. 
-    Inkludera samtliga klasser, och samtliga interna beroenden mellan klasserna i UML-diagrammet. 
-    Skilj på association, usage dependency, generalisering och realisering. 
-    Ni behöver inte ha med alla metoder och fält, men inkludera det som behövs för att åskådliggöra designen;
-    varför de beroenden som finns finns, och vilka ansvarsområden olika delar har. 
-    Ni får rita UML-diagrammet med vilket verktyg ni vill så länge resultatet är läsbart.
-    Analysera de beroenden som finns med avseende på cohesion och coupling, och Dependency Inversion Principle.
-- [ ] Vilka beroenden är nödvändiga? Vilka klasser är beroende av varandra som inte borde vara det?
-  - Finns det starkare beroenden än nödvändigt?
-
-- [ ] Kan ni identifiera några brott mot övriga designprinciper vi pratat om i kursen?
-
-## Uppgift 3: Ansvarsområden
-
-#### Analysera era klasser med avseende på Separation of Concern (SoC) och Single Responsibility Principle (SRP).
-
-#### Vilka ansvarsområden har era klasser?
-#### Vilka anledningar har de att förändras?
-
-- Object2D: Beskriver generiska egenskaper för objekt i planet, alltså position i x och y.
-- Vehicle: För allting som skall färdas i våran modell. Innehåller våran representation av ett fordons riktning.
-
-Det kan vara lämpligt att flytta representationen för riktning upp till Object2D eller en abstrakt klass som representerar
-alla Object2D's som kan förflytta sig. Nutida scope lämpar sig dock till att endast vehicle innehåller denna representation.
-
-- Automotive: Beskriver motoriserade fordon och implementerar Movable.
-
-- Cars: Beskriver modellen för personbilar. Implementerar vissa delar av Movable
-
-- Movable: Interfacet movable är ett kontrakt på att tre metoder skall finnas i den implementerade klassen:
-
-Move(), turnLeft(), och turnRight(). Detta interface implementeras delvis i Automotive, men move implementeras av de
-slutgiltiga klasserna som inte är abstrakta. Idealt hade varit att ha generiska metoder implementerade för dessa i
-högre klasser, som sedan kan overridas när avvikande beteende krävs. Detta skulle vara mer i linje med SoC att ha logiken för
-Movable vid samma nivå.
-
--Automotive, VolvoWorkshop, Object2D
-Img specificeras som en variabel som CarView använder vid rendering, och är definerad vid både automotive och volvoworkshop.
-En rimlig förändring (DRY) är att helt enkelt låta varje Object2D ha en Img och CarView kan kalla på detta fält felfritt.
+    Observer, Factory Method, State, Composite. För vart och ett av dessa fyra designmönster, svara på följande frågor:
+        Finns det något ställe i er design där ni redan använder detta pattern, avsiktligt eller oavsiktligt? Vilka designproblem löste ni genom att använda det?
+        Finns det något ställe där ni kan förbättra er design genom att använda detta design pattern? Vilka designproblem skulle ni lösa genom att använda det? Om inte, varför skulle er design inte förbättras av att använda det?
+    Uppdatera er design med de förbättringar ni identifierat.
 
 
+Uppgift 4: Refaktorisering igen
 
-#### På vilka klasser skulle ni behöva tillämpa dekomposition för att bättre följa SoC och SRP?
-Ett exempel är VehicleWorkshop, som har flera subklasser som egentligen kan vara instanser av vehicleworkshop.
-De har heller inte någon egen logik, utan specificerar bara fordonstypen.
+Implementera slutligen de designförbättringar ni identifierat i alla tidigare uppgifter.
 
-Uppgift 4: Ny design
 
-    Rita ett UML-diagram över en ny design som åtgärdar de brister ni identifierat med avseende både på beroenden och ansvarsfördelning.
-    Motivera, i termer av de principer vi gått igenom, varför era förbättringar verkligen är förbättringar.
-#### Skriv en refaktoriseringsplan. Den består av steg som tar nuvarande programmet till ett som implementerar er nya design.
-Planen behöver inte vara enormt detaljerad. Se Övning 3 för ett exempel på en refaktoriseringsplan.
+Uppgift 5: Utöka användargränssnittet
 
-#### Finns det några delar av planen som går att utföra parallellt, av olika utvecklare somVilka beroenden är nödvändiga? arbetar oberoende av varandra?
-#### Om inte, finns det något sätt att omformulera planen så att en sådan arbetsdelning är möjlig?
+Implementera funktionalitet för att lägga till och ta bort bilar via GUI:t. Kan ni implementera detta utan att behöva förändra existerande klassfiler?
 
-För att parallelt arbete skall vara möjligt krävs att någon av de följande gäller för varje ändring:
-- Koden som arbetas på inte beror på annan kod som arbetas på.
-- De som arbetar parallelt delar samma uppfattning kring gränssnittet mellan kodens beroenden. 
+    Skapa knappar för "Add car" och "Remove car" med följande funktionalitet:
+        "Add car" ska antingen generera en slumpmässig bil eller en given bil.
+        "Remove car" ska ta bort någon bil - välj själva hur det avgörs vilken.
+        Om inga bilar finns ska "Remove car" inte ha någon effekt, och om det finns 10 bilar ska "Add car" inte ha någon effekt. (OBS: Det måste inte vara just 10 som är gränsen, ni kan sätta en annan siffra om det gör det lättare med upplösningen.)
+    Kan något designmönster vara relevant att använda för denna utökning?
 
+
+Extra uppgifter for mer utmaning (ej betygsatta):
+Uppgift 6: Lagg till ny vy
+
+    Skriv ut "<Bil>: <Hastighet>" i något lämpligt hörn av panelen, eller kanske på en helt ny JLabel ni kan lägga under alla knappar. Detta bör göras inte som ett tillägg till den befintliga vyn, utan som en ny vy som kan samexistera med den gamla vyn, existera fristående från den gamla vyn, eller samexistera med helt andra vyer.
+    Hur bör eran MVC-lösning vara utformad for att möjliggöra att ovanstående förändring blir en utökning snarare än en modifikation?
+    Hur bör de olika komponenterna kommunicera med varandra?
+
+
+Uppgift 7: Immutability
+
+Gör bilmodellen (men inte användargränssnittet) immutable i görligaste mån. Gör detta utan att programmets observerbara beteende ändras: trots att ett bilobjekt inte kan ändras efter att det skapas, ska användarupplevelsen med bilar som rör sig vara oförändrad. Resonera om för- och nackdelar med att gå olika långt i projektet att göra allt immutable.
+
+
+Uppgift 8: Diverse
+
+    Gör så att man kan välja vilken bil man vill ta bort genom att markera bilarna, så att de blir "highlightade".
+    Gör ett spel av er simulator, komplett med poäng och 2-spelarfunktionalitet.
