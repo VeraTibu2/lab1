@@ -7,7 +7,12 @@ Uppgift 2: Model-View-Controller
 Användargränssnittet ni utgick från i del 3 var en ansats till implementation av Model-View-Controller Pattern, men där gränsdragningen mellan model, view, controller och applikation inte var något vidare genomtänkt (för att inte säga usel).
 
     Vilka avvikelser från MVC-idealet kan ni identifiera i det ursprungliga användargränssnittet? Vad borde ha gjorts smartare, dummare eller tunnare?
+        -hitta kod som är i fel ställe, t.ex; 
+            - move it funktionen (som bör hanteras av Modell) är i Drawpanel.
+            -ursprungliga CarController är inte riktigt en controller då den innehåller funktioner som egentligen bör vara i modell. Då kan man se Carcontroller som Modell-klassen istället.
     Vilka av dessa brister åtgärdade ni med er nya design från del 3? Hur då? Vilka brister åtgärdade ni inte?
+        -Move it, tog vi bort helt eftersom att vi redan hade logik som hanterade rörelsen på ett MOdell mapp.
+        -
     Rita ett nytt UML-diagram som beskriver en förbättrad design med avseende på MVC.
 
 

@@ -1,5 +1,6 @@
 package Visualizer;
 
+import Model.CollisionHandler;
 import Model.VehiclesModule.Automotive;
 import Model.VehiclesModule.CarsHandler.CarTypes.Volvo240;
 import Model.Workshops.WorkshopTypes.VolvoWorkshop;

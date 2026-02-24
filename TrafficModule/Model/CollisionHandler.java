@@ -1,4 +1,4 @@
-package Visualizer;
+package Model;
 
 import Model.VehiclesModule.CarsHandler.CarTypes.Volvo240;
 import Model.Workshops.WorkshopTypes.VolvoWorkshop;
