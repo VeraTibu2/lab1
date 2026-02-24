@@ -1,9 +1,8 @@
 package Visualizer;
 
-import VehiclesModule.Automotive;
-import VehiclesModule.CarsHandler.CarTypes.Volvo240;
-import Workshops.WorkshopTypes.VolvoWorkshop;
-import Visualizer.CollisionHandler;
+import Model.VehiclesModule.Automotive;
+import Model.VehiclesModule.CarsHandler.CarTypes.Volvo240;
+import Model.Workshops.WorkshopTypes.VolvoWorkshop;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

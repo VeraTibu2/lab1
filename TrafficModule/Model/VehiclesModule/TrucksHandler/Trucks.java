@@ -1,8 +1,8 @@
-package VehiclesModule.TrucksHandler;
+package Model.VehiclesModule.TrucksHandler;
 
-import VehiclesModule.Automotive;
-import VehiclesModule.CarsHandler.Cars;
-import VehiclesModule.Movable;
+import Model.VehiclesModule.Automotive;
+import Model.VehiclesModule.CarsHandler.Cars;
+import Model.VehiclesModule.Movable;
 
 import java.util.Stack;
 

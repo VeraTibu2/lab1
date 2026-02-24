@@ -1,4 +1,4 @@
-package VehiclesModule.Positions;
+package Model.VehiclesModule.Positions;
 
 public abstract class Object2D {
     public double x; // xcord

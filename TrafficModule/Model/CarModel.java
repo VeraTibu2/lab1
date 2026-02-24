@@ -1,9 +1,10 @@
-package Visualizer;
+package Model;
 
-import VehiclesModule.Automotive;
-import VehiclesModule.CarsHandler.CarTypes.Saab95;
-import VehiclesModule.CarsHandler.CarTypes.Volvo240;
-import VehiclesModule.TrucksHandler.Trucktypes.Scania;
+import Model.VehiclesModule.Automotive;
+import Model.VehiclesModule.CarsHandler.CarTypes.Saab95;
+import Model.VehiclesModule.CarsHandler.CarTypes.Volvo240;
+import Model.VehiclesModule.TrucksHandler.Trucktypes.Scania;
+import Visualizer.CarView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 * modifying the model state and the updating the view.
  */
 
-public class CarController {
+public class CarModel {
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
@@ -34,7 +35,7 @@ public class CarController {
 
     public static void main(String[] args) {
         // Instance of this class
-        CarController cc = new CarController();
+        CarModel cc = new CarModel();
 
         cc.cars.add(new Volvo240());
         cc.cars.add(new Saab95());

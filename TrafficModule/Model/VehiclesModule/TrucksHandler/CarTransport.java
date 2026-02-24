@@ -1,7 +1,7 @@
-package VehiclesModule.TrucksHandler;
+package Model.VehiclesModule.TrucksHandler;
 
-import VehiclesModule.CarsHandler.Cars;
-import VehiclesModule.TrucksHandler.Trucks;
+import Model.VehiclesModule.CarsHandler.Cars;
+
 import java.util.*;
 
 public abstract class CarTransport extends  Trucks{

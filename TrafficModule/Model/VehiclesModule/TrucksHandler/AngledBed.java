@@ -1,4 +1,4 @@
-package VehiclesModule.TrucksHandler;
+package Model.VehiclesModule.TrucksHandler;
 
 public interface AngledBed {
     void raiseBed(double angle);

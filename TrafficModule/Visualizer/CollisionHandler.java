@@ -1,8 +1,8 @@
 package Visualizer;
 
-import VehiclesModule.CarsHandler.CarTypes.Volvo240;
-import Workshops.WorkshopTypes.VolvoWorkshop;
-import VehiclesModule.Automotive;
+import Model.VehiclesModule.CarsHandler.CarTypes.Volvo240;
+import Model.Workshops.WorkshopTypes.VolvoWorkshop;
+import Model.VehiclesModule.Automotive;
 
 
 import java.util.ArrayList;

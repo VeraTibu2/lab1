@@ -1,6 +1,6 @@
-package VehiclesModule.CarsHandler.CarTypes;
+package Model.VehiclesModule.CarsHandler.CarTypes;
 
-import VehiclesModule.CarsHandler.Cars;
+import Model.VehiclesModule.CarsHandler.Cars;
 
 import java.awt.*;
 

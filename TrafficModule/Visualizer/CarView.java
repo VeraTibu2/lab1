@@ -1,8 +1,9 @@
 package Visualizer;
 
-import VehiclesModule.Automotive;
-import VehiclesModule.CarsHandler.CarTypes.Saab95;
-import VehiclesModule.TrucksHandler.Trucktypes.Scania;
+import Model.CarModel;
+import Model.VehiclesModule.Automotive;
+import Model.VehiclesModule.CarsHandler.CarTypes.Saab95;
+import Model.VehiclesModule.TrucksHandler.Trucktypes.Scania;
 
 
 import javax.swing.*;
@@ -25,10 +26,10 @@ public class CarView extends JFrame{
     private static final int Y = 800;
 
     // The controller member
-    CarController carC;
+    CarModel carC;
     DrawPanel drawPanel;
     // Constructor
-    public CarView(String framename, CarController cc){
+    public CarView(String framename, CarModel cc){
         this.carC = cc;
         this.drawPanel = new DrawPanel(X, Y-240, carC.cars);
         initComponents(framename);
