@@ -26,8 +26,8 @@ public class CarView extends JFrame{
     private static final int Y = 800;
 
     // The controller member
-    CarModel carC;
-    DrawPanel drawPanel;
+    public CarModel carC;
+    public DrawPanel drawPanel;
     // Constructor
     public CarView(String framename, CarModel cc){
         this.carC = cc;

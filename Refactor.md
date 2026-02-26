@@ -5,8 +5,6 @@
 #### Vilka ansvarsområden har era klasser?
 #### Vilka anledningar har de att förändras?
 
-- Object2D: Beskriver generiska egenskaper för objekt i planet, alltså position i x och y.
-- Vehicle: För allting som skall färdas i våran modell. Innehåller våran representation av ett fordons riktning.
 
 Det kan vara lämpligt att flytta representationen för riktning upp till Object2D eller en abstrakt klass som representerar
 alla Object2D's som kan förflytta sig. Nutida scope lämpar sig dock till att endast vehicle innehåller denna representation.

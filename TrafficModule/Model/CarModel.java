@@ -27,7 +27,7 @@ public class CarModel {
     private Timer timer = new Timer(delay, new TimerListener());
 
     // The frame that represents this instance View of the MVC pattern
-    CarView frame;
+    public CarView frame;
     // A list of cars, modify if needed
     public ArrayList<Automotive> cars = new ArrayList<>();
 
@@ -67,8 +67,7 @@ public class CarModel {
     // Calls the gas method for each car once
     public void gas(int amount) {
         double gas = ((double) amount) / 100;
-       for (Automotive car : cars
-                ) {
+       for (Automotive car : cars) {
             car.gas(gas);
        }
     }
