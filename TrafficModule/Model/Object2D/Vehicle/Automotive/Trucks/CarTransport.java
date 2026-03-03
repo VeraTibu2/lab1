@@ -1,10 +1,10 @@
-package Model.VehiclesModule.TrucksHandler;
+package Model.Object2D.Vehicle.Automotive.Trucks;
 
-import Model.VehiclesModule.CarsHandler.Cars;
+import Model.Object2D.Vehicle.Automotive.Cars.Cars;
 
 import java.util.*;
 
-public abstract class CarTransport extends  Trucks{
+public abstract class CarTransport extends Trucks {
 
     public CarTransport(int initialCapacity, double max, double min){
         capacity = initialCapacity;

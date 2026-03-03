@@ -1,8 +1,8 @@
 package Model;
 
-import Model.VehiclesModule.CarsHandler.CarTypes.Volvo240;
+import Model.Object2D.Vehicle.Automotive.Cars.Volvo240;
 import Model.Workshops.WorkshopTypes.VolvoWorkshop;
-import Model.VehiclesModule.Automotive;
+import Model.Object2D.Vehicle.Automotive.Automotive;
 
 
 import java.util.ArrayList;

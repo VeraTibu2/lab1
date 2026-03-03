@@ -1,8 +1,9 @@
-package Model.VehiclesModule.TrucksHandler;
+package Model.Object2D.Vehicle.Automotive.Trucks;
 
-import Model.VehiclesModule.Automotive;
-import Model.VehiclesModule.CarsHandler.Cars;
-import Model.VehiclesModule.Movable;
+import Model.Object2D.Vehicle.Automotive.Automotive;
+import Model.Object2D.Vehicle.Automotive.Cars.Cars;
+import Model.Object2D.Vehicle.Movable;
+import Model.VehiclesModule.TrucksHandler.AngledBed;
 
 import java.util.Stack;
 

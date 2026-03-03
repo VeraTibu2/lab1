@@ -1,8 +1,8 @@
 package Visualizer;
 
 import Model.CarModel;
-import Model.VehiclesModule.Automotive;
-import Model.VehiclesModule.CarsHandler.CarTypes.Saab95;
+import Model.Object2D.Vehicle.Automotive.Automotive;
+import Model.Object2D.Vehicle.Automotive.Cars.Saab95;
 import Model.VehiclesModule.TrucksHandler.Trucktypes.Scania;
 
 

@@ -1,6 +1,6 @@
 package Model.VehiclesModule;
 
-import Model.VehiclesModule.CarsHandler.Cars;
+import Model.Object2D.Vehicle.Automotive.Cars.Cars;
 
 import java.util.Deque;
 

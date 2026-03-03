@@ -1,4 +1,4 @@
-package Model.VehiclesModule;
+package Model.Object2D.Vehicle;
 
 public interface Movable {
     void move();

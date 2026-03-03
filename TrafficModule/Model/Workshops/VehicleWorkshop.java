@@ -1,6 +1,6 @@
 package Model.Workshops;
 
-import Model.VehiclesModule.Positions.Object2D;
+import Model.Object2D.Object2D;
 
 import java.awt.image.BufferedImage;
 import java.util.*;
