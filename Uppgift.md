@@ -10,9 +10,11 @@ Användargränssnittet ni utgick från i del 3 var en ansats till implementation
         -hitta kod som är i fel ställe, t.ex; 
             -Move it funktionen (som bör hanteras av Modell) är i Drawpanel.
             -ursprungliga CarController är inte riktigt en controller då den innehåller funktioner som egentligen bör vara i modell. Då kan man se Carcontroller som Modell-klassen istället.
+            -I carView initialiseras positionen för alla bilar. detta position 
     Vilka av dessa brister åtgärdade ni med er nya design från del 3? Hur då? Vilka brister åtgärdade ni inte?
         -Move it, tog vi bort helt eftersom att vi redan hade logik som hanterade rörelsen på ett MOdell mapp.
-        -
+        -Carview innehåller logik som egentligen borde hanteras av Controllen. Separationen mellan de är luddigt.
+
     Rita ett nytt UML-diagram som beskriver en förbättrad design med avseende på MVC.
         -CarView
             Döps om till MainController, förlorar icke-input orienterad kod
@@ -45,6 +47,7 @@ Då strukturen på vårat program inte är baserat på moduler, använder vi oss
 relevant kod.
 
 Inget för tillfället, istället deklarerar vi klasser genom att anropa constructorn
+
 
 Uppgift 5: Utöka användargränssnittet
 

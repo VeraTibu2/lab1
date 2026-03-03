@@ -47,9 +47,7 @@ public class CarModel {
         // Instance of this class
         CarModel cc = new CarModel();
 
-        cc.cars.add(new Volvo240());
-        cc.cars.add(new Saab95());
-        cc.cars.add(new Scania());
+        InitialiseCars(cc);
 
         // Start a new view and send a reference of self
         cc.frame = new CarView("CarSim 1.0", cc);
