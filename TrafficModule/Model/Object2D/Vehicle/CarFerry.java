@@ -1,4 +1,4 @@
-package Model.VehiclesModule;
+package Model.Object2D.Vehicle;
 
 import Model.Object2D.Vehicle.Automotive.Cars.Cars;
 

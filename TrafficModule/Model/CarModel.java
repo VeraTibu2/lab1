@@ -3,7 +3,7 @@ package Model;
 import Model.Object2D.Vehicle.Automotive.Automotive;
 import Model.Object2D.Vehicle.Automotive.Cars.Saab95;
 import Model.Object2D.Vehicle.Automotive.Cars.Volvo240;
-import Model.VehiclesModule.TrucksHandler.Trucktypes.Scania;
+import Model.Object2D.Vehicle.Automotive.Trucks.Scania;
 import Visualizer.CarView;
 
 import javax.swing.*;
@@ -32,6 +32,16 @@ public class CarModel {
     public ArrayList<Automotive> cars = new ArrayList<>();
 
     //methods:
+    public <T> T addNewCar() {
+
+    }
+
+    public static void InitialiseCars(CarModel cc){
+        cc.cars.add(new Volvo240());
+        cc.cars.add(new Saab95());
+        cc.cars.add(new Scania());
+    }
+
 
     public static void main(String[] args) {
         // Instance of this class

@@ -8,12 +8,17 @@ Användargränssnittet ni utgick från i del 3 var en ansats till implementation
 
     Vilka avvikelser från MVC-idealet kan ni identifiera i det ursprungliga användargränssnittet? Vad borde ha gjorts smartare, dummare eller tunnare?
         -hitta kod som är i fel ställe, t.ex; 
-            - move it funktionen (som bör hanteras av Modell) är i Drawpanel.
+            -Move it funktionen (som bör hanteras av Modell) är i Drawpanel.
             -ursprungliga CarController är inte riktigt en controller då den innehåller funktioner som egentligen bör vara i modell. Då kan man se Carcontroller som Modell-klassen istället.
     Vilka av dessa brister åtgärdade ni med er nya design från del 3? Hur då? Vilka brister åtgärdade ni inte?
         -Move it, tog vi bort helt eftersom att vi redan hade logik som hanterade rörelsen på ett MOdell mapp.
         -
     Rita ett nytt UML-diagram som beskriver en förbättrad design med avseende på MVC.
+        -CarView
+            Döps om till MainController, förlorar icke-input orienterad kod
+        -DrawPanel
+            Döps om till MainView
+            
 
 
 Uppgift 3: Fler designmönster
@@ -23,11 +28,23 @@ Uppgift 3: Fler designmönster
         Finns det något ställe där ni kan förbättra er design genom att använda detta design pattern? Vilka designproblem skulle ni lösa genom att använda det? Om inte, varför skulle er design inte förbättras av att använda det?
     Uppdatera er design med de förbättringar ni identifierat.
 
+#### Observer:
+I CarView används listeners, en form av observer pattern,
+Vi skulle kunna använda Observer i våran 'view' del av programmet för att  länka ihop grafik kontroll, och datamodell.
 
 Uppgift 4: Refaktorisering igen
 
 Implementera slutligen de designförbättringar ni identifierat i alla tidigare uppgifter.
 
+#### Factory method
+Skall användas i Add car för att minska upprepning samt öka läsbarheten
+
+
+#### Composite
+Då strukturen på vårat program inte är baserat på moduler, använder vi oss av inheritance för att återanvända
+relevant kod.
+
+Inget för tillfället, istället deklarerar vi klasser genom att anropa constructorn
 
 Uppgift 5: Utöka användargränssnittet
 

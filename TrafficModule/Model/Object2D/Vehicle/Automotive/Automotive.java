@@ -19,8 +19,6 @@ public abstract class Automotive extends Vehicle implements Movable {
     public BufferedImage Img;
     public final int getNrDoors () { return nrDoors; }
 
-
-
     public final double getEnginePower() {
         return enginePower;
     }

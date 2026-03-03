@@ -3,7 +3,7 @@ package Model.Object2D.Vehicle.Automotive.Trucks;
 import Model.Object2D.Vehicle.Automotive.Automotive;
 import Model.Object2D.Vehicle.Automotive.Cars.Cars;
 import Model.Object2D.Vehicle.Movable;
-import Model.VehiclesModule.TrucksHandler.AngledBed;
+import Model.Object2D.Vehicle.AngledBed;
 
 import java.util.Stack;
 

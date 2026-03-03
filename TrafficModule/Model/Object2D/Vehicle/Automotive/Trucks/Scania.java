@@ -1,6 +1,4 @@
-package Model.VehiclesModule.TrucksHandler.Trucktypes;
-
-import Model.Object2D.Vehicle.Automotive.Trucks.Trucks;
+package Model.Object2D.Vehicle.Automotive.Trucks;
 
 import java.awt.*;
 
