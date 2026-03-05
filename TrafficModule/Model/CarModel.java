@@ -10,6 +10,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.lang.reflect.*;
+import java.util.List;
+import java.util.Random;
 
 /*
 * This class represents the Controller part in the MVC pattern.
@@ -18,6 +21,9 @@ import java.util.ArrayList;
  */
 
 public class CarModel {
+    // Session rng
+    Random rng = new Random();
+
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
@@ -31,9 +37,13 @@ public class CarModel {
     // A list of cars, modify if needed
     public ArrayList<Automotive> cars = new ArrayList<>();
 
-    //methods:
-    public <T> T addNewCar() {
 
+    //methods:
+
+    private Vehicle randomVehicle() {
+        int vehicleKindsCount = vehicleKinds.size(); //This is pretty bad
+        int n = rng.nextInt(1, vehicleKindsCount);
+        VehicleFactory v = vehicleKinds.get(n)
     }
 
     public static void InitialiseCars(CarModel cc){
