@@ -40,10 +40,10 @@ public class CarModel {
 
     //methods:
 
-    private Vehicle randomVehicle() {
+    private void randomVehicle() {
         int vehicleKindsCount = vehicleKinds.size(); //This is pretty bad
         int n = rng.nextInt(1, vehicleKindsCount);
-        VehicleFactory v = vehicleKinds.get(n)
+        vehicleKinds.get(n).run();
     }
 
     public static void InitialiseCars(CarModel cc){
