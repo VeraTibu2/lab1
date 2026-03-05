@@ -6,12 +6,16 @@ import Model.Object2D.Vehicle.Automotive.Cars.Saab95;
 import Model.Object2D.Vehicle.Automotive.Trucks.Scania;
 
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.Objects;
 
 /**
  * This class represents the full view of the MVC pattern of your car simulator.
@@ -192,5 +196,22 @@ public class CarView extends JFrame{
         this.setVisible(true);
         // Make sure the frame exits when "x" is pressed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+
+        }
+
+    public void SetComponentsImg(){
+        try {
+            for(Automotive i : carC){
+                BufferedImage img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream("/pics/" + i.modelName + ".jpg")));
+
+                i.SetImage(img);
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

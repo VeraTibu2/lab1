@@ -1,9 +1,12 @@
 package Model;
 
 import Model.Object2D.Vehicle.Automotive.Automotive;
+import Model.Object2D.Vehicle.Automotive.Cars.Cars;
 import Model.Object2D.Vehicle.Automotive.Cars.Saab95;
 import Model.Object2D.Vehicle.Automotive.Cars.Volvo240;
 import Model.Object2D.Vehicle.Automotive.Trucks.Scania;
+import Model.Object2D.Vehicle.Vehicle;
+import Model.Object2D.Vehicle.VehicleFactory;
 import Visualizer.CarView;
 
 import javax.swing.*;
@@ -32,18 +35,23 @@ public class CarModel {
     // each step between delays.
     private Timer timer = new Timer(delay, new TimerListener());
 
+    private VehicleFactory VF = new VehicleFactory();
+
     // The frame that represents this instance View of the MVC pattern
-    public CarView frame;
     // A list of cars, modify if needed
     public ArrayList<Automotive> cars = new ArrayList<>();
+    private final List<Runnable> vehicleKinds = List.of(
+            VF::AddScania, VF::AddSaab, VF::AddVolvo);
+
 
 
     //methods:
 
-    private Vehicle randomVehicle() {
+    private void randomVehicle() {
         int vehicleKindsCount = vehicleKinds.size(); //This is pretty bad
         int n = rng.nextInt(1, vehicleKindsCount);
-        VehicleFactory v = vehicleKinds.get(n)
+        VehicleFactory v = vehicleKinds.get(n);
+        v
     }
 
     public static void InitialiseCars(CarModel cc){
@@ -53,7 +61,7 @@ public class CarModel {
     }
 
 
-    public static void main(String[] args) {
+    public CarModel() {
         // Instance of this class
         CarModel cc = new CarModel();
 

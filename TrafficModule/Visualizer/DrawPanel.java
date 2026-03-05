@@ -23,39 +23,6 @@ public class DrawPanel extends JPanel{
     VolvoWorkshop vWS = new VolvoWorkshop();
 
 
-
-    // TODO: Make this general for all cars
-    void moveit(int x, int y, Automotive car){
-        
-    }
-
-    public void SetPosition(){
-        int ypos = 0;
-        for(Automotive i: cars){
-            i.setPosition(0,ypos);
-            ypos = ypos + 100;
-        }
-
-        vWS.setPosition(300,300);
-    }
-
-    public void SetComponentsImg(){
-        try {
-            for(Automotive i : this.cars){
-                BufferedImage img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream("/pics/" + i.modelName + ".jpg")));
-
-                i.SetImage(img);
-            }
-
-            BufferedImage VWS_Img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream("/pics/VolvoBrand.jpg")));
-            vWS.SetImg(VWS_Img);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
     // Initializes the panel and reads the images
     public DrawPanel(int x, int y, ArrayList<Automotive> cars) {
         this.setDoubleBuffered(true);
@@ -63,9 +30,6 @@ public class DrawPanel extends JPanel{
         this.setBackground(Color.green);
         this.CHandler = new CollisionHandler(this.vWS, cars);
         this.cars = cars;
-
-        SetPosition();
-        SetComponentsImg();
 
     }
 
