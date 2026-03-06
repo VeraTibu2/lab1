@@ -93,4 +93,12 @@ public class CarModel {
             car.brake(Br);
         }
     }
+
+    public void step() {
+        for (Automotive car : this.cars) {
+            car.move();
+            int x = (int) Math.round(car.x);
+            int y = (int) Math.round(car.y);
+        }
+    }
 }
