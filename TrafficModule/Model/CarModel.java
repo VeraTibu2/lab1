@@ -1,11 +1,9 @@
 package Model;
 
 import Model.Object2D.Vehicle.Automotive.Automotive;
-import Model.Object2D.Vehicle.Automotive.Cars.Cars;
 import Model.Object2D.Vehicle.Automotive.Cars.Saab95;
 import Model.Object2D.Vehicle.Automotive.Cars.Volvo240;
 import Model.Object2D.Vehicle.Automotive.Trucks.Scania;
-import Model.Object2D.Vehicle.Vehicle;
 import Model.Object2D.Vehicle.VehicleFactory;
 import Visualizer.CarView;
 
@@ -13,8 +11,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.lang.reflect.*;
-import java.util.List;
 import java.util.Random;
 
 /*
@@ -24,17 +20,13 @@ import java.util.Random;
  */
 
 public class CarModel {
+
     // Session rng
     Random rng = new Random();
 
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
-    private final int delay = 50;
-    // The timer is started with a listener (see below) that executes the statements
-    // each step between delays.
-    private Timer timer = new Timer(delay, new TimerListener());
-
     private VehicleFactory VF = new VehicleFactory();
 
     // The frame that represents this instance View of the MVC pattern
@@ -45,30 +37,30 @@ public class CarModel {
     //methods:
 
     private void randomVehicle() {
-        int vehicleKindsCount = vehicleKinds.size(); //This is pretty bad
+        int vehicleKindsCount = VF.vehicleConstructors.size();
         int n = rng.nextInt(1, vehicleKindsCount);
-        VehicleFactory v = vehicleKinds.get(n);
-        v
+        Runnable v = VF.vehicleConstructors.get(n);
+        v.run();
     }
 
-    public static void InitialiseCars(CarModel cc){
-        cc.cars.add(new Volvo240());
-        cc.cars.add(new Saab95());
-        cc.cars.add(new Scania());
+    public void InitialiseCars(){
+        this.cars.add(new Volvo240());
+        this.cars.add(new Saab95());
+        this.cars.add(new Scania());
     }
 
+    public void removeCar(){ //Removes a random car
+        int max = cars.size();
+        int random = rng.nextInt(0,max);
+        cars.remove(random);
+    }
 
     public CarModel() {
         // Instance of this class
-        CarModel cc = new CarModel();
+        CarModel mainCarModel = new CarModel();
 
-        InitialiseCars(cc);
+        InitialiseCars(mainCarModel);
 
-        // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
-
-        // Start the timer
-        cc.timer.start();
     }
 
     /* Each step the TimerListener moves all the cars in the list and tells the

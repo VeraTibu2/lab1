@@ -4,19 +4,14 @@ import Model.Object2D.Vehicle.Automotive.Automotive;
 import Model.Object2D.Vehicle.Automotive.Cars.Saab95;
 import Model.Object2D.Vehicle.Automotive.Cars.Volvo240;
 import Model.Object2D.Vehicle.Automotive.Trucks.Scania;
-import Visualizer.DrawPanel;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class VehicleFactory {
     ArrayList<Automotive> cars;
     private int ypos = 0;
-    private final List<Runnable> vehicleKinds = List.of(
+    public final List<Runnable> vehicleConstructors = List.of(
             this::AddScania, this::AddSaab, this::AddVolvo);
 
 

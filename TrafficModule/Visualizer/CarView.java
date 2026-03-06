@@ -203,7 +203,7 @@ public class CarView extends JFrame{
 
     public void SetComponentsImg(){
         try {
-            for(Automotive i : carC){
+            for(Automotive i : carC.cars){
                 BufferedImage img = ImageIO.read(Objects.requireNonNull(DrawPanel.class.getResourceAsStream("/pics/" + i.modelName + ".jpg")));
 
                 i.SetImage(img);
