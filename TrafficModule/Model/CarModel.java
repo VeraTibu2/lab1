@@ -40,6 +40,9 @@ public class CarModel {
         v.run();
     }
 
+    public void Addcar(){
+
+    }
     public void InitialiseCars(){
         this.cars.add(new Volvo240());
         this.cars.add(new Saab95());

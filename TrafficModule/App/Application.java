@@ -29,7 +29,7 @@ public class Application {
             timer = new Timer(delay, new CarController.TimerListener());
 
             // Start the timer
-            cV.timer.start();
+            timer.start();
 
         }
         else { // Headless mode
