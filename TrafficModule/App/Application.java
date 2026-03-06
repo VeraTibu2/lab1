@@ -1,5 +1,5 @@
 package App;
-
+import java.lang.Thread;
 
 import Model.CarModel;
 import Model.Object2D.Vehicle.Automotive.Automotive;
@@ -17,20 +17,27 @@ public class Application {
 
     }
 
+    private void wait(int timeToSleep){
+        try {
+            Thread.sleep(timeToSleep);
+        } catch(InterruptedException _){
+
+        };
+    }
     private static void print(Object o) {
         System.out.println(o);
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         CarModel cM = new CarModel();
 
         CarController cV = new CarController("CarSim 1.0", cM);
+        cM.step();
+        //frame.drawPanel.moveit(x, y, car);
+        // repaint() calls the paintComponent method of the panel
+        cV.repaint();
 
-
-            timer = new Timer(delay, new CarController.TimerListener());
-
-        // Start the timer
-        timer.start();
+        wait(50);
 
     }
  }

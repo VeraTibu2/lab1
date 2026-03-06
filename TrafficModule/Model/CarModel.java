@@ -1,11 +1,10 @@
 package Model;
 
+import Model.Object2D.Object2D;
 import Model.Object2D.Vehicle.Automotive.Automotive;
-import Model.Object2D.Vehicle.Automotive.Cars.Saab95;
-import Model.Object2D.Vehicle.Automotive.Cars.Volvo240;
-import Model.Object2D.Vehicle.Automotive.Trucks.Scania;
 import Model.Object2D.Vehicle.VehicleFactory;
 import java.util.ArrayList;
+import java.util.Dictionary;
 import java.util.Random;
 
 /*
@@ -14,22 +13,33 @@ import java.util.Random;
 * modifying the model state and the updating the view.
  */
 
-public class CarModel {
+protected class Subscription {
+    public Reciever reciever;
+
+    public String event;
+
+    Subscription(Reciever r, String e){
+        reciever = r;
+        event = e;
+    }
+}
+
+public class CarModel implements Notifier {
 
     // Session rng
     Random rng = new Random();
 
+    private final int max = 4;
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private VehicleFactory VF = new VehicleFactory();
 
-    private ArrayList<Reciever> carAddedListeners;
+    private ArrayList<Subscription> subscriptions;
 
     // The frame that represents this instance View of the MVC pattern
     // A list of cars, modify if needed
-    public ArrayList<Automotive> cars = new ArrayList<>();
-
+    private ArrayList<Automotive> cars = new ArrayList<>();
 
     //methods:
 
@@ -52,15 +62,30 @@ public class CarModel {
     public void addCar(){
         if (getCars().size()<max) {
             randomVehicle();
-            Automotive a = getCars().getLast();
+            notifyEvent("Car Added");
 
-            notifyCarAdded();
         }
     }
-    public void InitialiseCars(){
-        this.cars.add(new Volvo240());
-        this.cars.add(new Saab95());
-        this.cars.add(new Scania());
+
+    protected void notifyEvent(String msg){
+        if (!subscriptions.isEmpty()) {
+            for (Subscription s : subscriptions) {
+                if (s.event.equals(msg)) {
+                    s.reciever.notify(msg);
+                }
+            }
+        }
+    }
+    public void subscribe(Reciever r, String event){
+            Subscription s = new Subscription(r, event);
+            subscriptions.add(s);
+        }
+    }
+
+
+    public ArrayList<Automotive> getCars(){
+        ArrayList<Automotive> cars;
+        return cars;
     }
 
     public void removeCar(){ //Removes a random car
@@ -70,10 +95,10 @@ public class CarModel {
             int random = rng.nextInt(0, max);
             cars.remove(random);
         }
+        this.notifyEvent("Car Removed");
     }
 
-    public CarModel() {
-    }
+
 
 
 

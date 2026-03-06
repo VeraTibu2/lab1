@@ -30,14 +30,16 @@ public class CarController extends JFrame{
     private static final int Y = 800;
 
     // The controller member
-    public static CarModel carM;
+    public CarModel carM;
     
-    public static CarView carView;
+    public CarView carView;
     // Constructor
     public CarController(String framename, CarModel cc){
         this.carM = cc;
         this.carView = new CarView(X, Y-240, carM);
+
         initComponents(framename);
+
     }
 
 
@@ -146,7 +148,7 @@ public class CarController extends JFrame{
         turboOffButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Automotive i: carM.cars){
+                for (Automotive i: carM.getCars()){
                     if(i instanceof Saab95){
                         ((Saab95)i ).setTurboOff();
                     }
@@ -157,7 +159,7 @@ public class CarController extends JFrame{
         stopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Automotive i: carM.cars){
+                for (Automotive i: carM.getCars()){
                     i.stopEngine();
                 }
             }
@@ -166,7 +168,7 @@ public class CarController extends JFrame{
         liftBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(Automotive i : carM.cars){
+                for(Automotive i : carM.getCars()){
                     if( i instanceof Scania) {
                         ((Scania) i).raiseBed(30);
                         System.out.println("Bed Lifted!" + ((Scania) i).getBedAngle());
@@ -178,7 +180,7 @@ public class CarController extends JFrame{
         lowerBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(Automotive i : carM.cars){
+                for(Automotive i : carM.getCars()){
                     if(i instanceof Scania) {
 
                         ((Scania) i).lowerBed(30);
@@ -193,14 +195,16 @@ public class CarController extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 carM.addCar();
-
+                Automotive a = carM.getCars().getLast();
+                CarM.SetPosition(a);
+                carView.setImage(a);
             }
         }));
 
         RemomveCarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                carM.removeCar();
             }
         });
 
@@ -221,14 +225,4 @@ public class CarController extends JFrame{
         }
 
 
-    }
-
-    public static class TimerListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            carM.step();
-                //frame.drawPanel.moveit(x, y, car);
-                // repaint() calls the paintComponent method of the panel
-            carView.repaint();
-            }
-        }
     }
