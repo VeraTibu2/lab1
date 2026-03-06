@@ -51,12 +51,13 @@ public class CarModel implements Notifier {
         v.run();
     }
 
+    private float randomfloat() {
+        return rng.nextFloat(0,210);
+    }
 
-    public void SetPosition(){
-        for(Automotive i: cars){
-            i.setPosition(0,ypos);
-            ypos = ypos + 100;
-        }
+
+    public void SetPosition(Object2D i){
+        i.setPosition(randomfloat(),randomfloat());
     }
 
     public void addCar(){
@@ -90,10 +91,10 @@ public class CarModel implements Notifier {
 
     public void removeCar(){ //Removes a random car
 
-        int max = cars.size();
+        int max = getCars().size();
         if (max>0) {
             int random = rng.nextInt(0, max);
-            cars.remove(random);
+            getCars().remove(random);
         }
         this.notifyEvent("Car Removed");
     }
@@ -117,11 +118,19 @@ public class CarModel implements Notifier {
         }
     }
 
+    public void randomizeDirection(Automotive car) {
+        int n = rng.nextInt(0, 4);
+        car.direction = car.directions[n];
+    }
+
     public void step() {
         for (Automotive car : this.cars) {
             car.move();
             int x = (int) Math.round(car.x);
             int y = (int) Math.round(car.y);
+
+            randommizeDirection(car);
+
         }
     }
 }

@@ -5,4 +5,7 @@ import Model.Workshops.VehicleWorkshop;
 
 public class VolvoWorkshop extends VehicleWorkshop<Volvo240> {
 
+    public VolvoWorkshop(){
+        modelName = "VolvoBrand";
+    }
 }

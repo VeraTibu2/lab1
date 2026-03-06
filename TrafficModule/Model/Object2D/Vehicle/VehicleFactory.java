@@ -10,30 +10,18 @@ import java.util.List;
 
 public class VehicleFactory {
     ArrayList<Automotive> cars;
-    private int ypos = 0;
     public final List<Runnable> vehicleConstructors = List.of(
             this::AddScania, this::AddSaab, this::AddVolvo);
 
 
-
-    public void SetPosition(){
-        for(Automotive i: cars){
-            i.setPosition(0,ypos);
-            ypos = ypos + 100;
-        }
-    }
-
-
-    public Volvo240 AddVolvo(){
+    public void AddVolvo(){
         Volvo240 v = new Volvo240();
         cars.add(v);
-        return v;
     }
 
-    public Saab95 AddSaab(){
+    public void AddSaab(){
         Saab95 s = new Saab95();
         cars.add(s);
-        return s;
     }
 
 
