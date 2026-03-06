@@ -60,7 +60,7 @@ public class CarModel {
         // Instance of this class
         CarModel mainCarModel = new CarModel();
 
-        InitialiseCars(mainCarModel);
+        mainCarModel.InitialiseCars();
 
     }
 

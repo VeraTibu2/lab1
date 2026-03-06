@@ -2,10 +2,10 @@ package App;
 
 
 import Model.CarModel;
+import Model.Object2D.Vehicle.Automotive.Automotive;
 import Visualizer.CarView;
 
 import javax.swing.*;
-
 public class Application {
 
     CarModel cM;
@@ -33,7 +33,10 @@ public class Application {
         }
         else { // Headless mode
             CarModel cM = new CarModel();
-            cM.
+            cM.gas(100);
+            for(int i = 0; i<100; i++){
+                cM.step();
+                }
         }
     }
 
