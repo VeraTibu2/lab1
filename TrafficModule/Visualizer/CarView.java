@@ -30,7 +30,8 @@ public class CarView extends JFrame{
     private static final int Y = 800;
 
     // The controller member
-    public CarModel carC;
+    public CarModel carM;
+    
     public DrawPanel drawPanel;
     // Constructor
     public CarView(String framename, CarModel cc){
@@ -213,5 +214,16 @@ public class CarView extends JFrame{
             throw new RuntimeException(e);
         }
 
+
+
     }
-}
+
+    private class TimerListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            carM.step();
+                //frame.drawPanel.moveit(x, y, car);
+                // repaint() calls the paintComponent method of the panel
+            drawPanel.repaint();
+            }
+        }
+    }

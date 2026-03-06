@@ -29,6 +29,7 @@ public class CarModel {
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private VehicleFactory VF = new VehicleFactory();
 
+
     // The frame that represents this instance View of the MVC pattern
     // A list of cars, modify if needed
     public ArrayList<Automotive> cars = new ArrayList<>();
@@ -63,21 +64,7 @@ public class CarModel {
 
     }
 
-    /* Each step the TimerListener moves all the cars in the list and tells the
-    * view to update its images. Change this method to your needs.
-    * */
-    private class TimerListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            for (Automotive car : cars) {
-                car.move();
-                int x = (int) Math.round(car.x);
-                int y = (int) Math.round(car.y);
-                //frame.drawPanel.moveit(x, y, car);
-                // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
-            }
-        }
-    }
+
 
     // Calls the gas method for each car once
     public void gas(int amount) {
