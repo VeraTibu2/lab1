@@ -16,8 +16,8 @@ import java.util.Objects;
 public class VehicleFactory {
     ArrayList<Automotive> cars;
     private int ypos = 0;
-
-
+    private final List<Runnable> vehicleKinds = List.of(
+            this::AddScania, this::AddSaab, this::AddVolvo);
 
 
 
@@ -49,18 +49,6 @@ public class VehicleFactory {
     }
 
 
-    public Vehicle makeVehicle(String target){
-        switch (target) {
-            case "Volvo240"{
-                return new Volvo240();
-            }
-            case "Saab95" {
-                return new Saab95();
-            }
-            }
-        }
-
-    }
 
 
 

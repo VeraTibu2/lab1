@@ -40,9 +40,6 @@ public class CarModel {
     // The frame that represents this instance View of the MVC pattern
     // A list of cars, modify if needed
     public ArrayList<Automotive> cars = new ArrayList<>();
-    private final List<Runnable> vehicleKinds = List.of(
-            VF::AddScania, VF::AddSaab, VF::AddVolvo);
-
 
 
     //methods:
