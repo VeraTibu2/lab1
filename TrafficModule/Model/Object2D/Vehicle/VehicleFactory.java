@@ -37,10 +37,9 @@ public class VehicleFactory {
     }
 
 
-    public Scania AddScania(){
+    public void AddScania(){
         Scania s = new Scania();
         cars.add(s);
-        return s;
     }
 
 

@@ -2,6 +2,7 @@ package App;
 
 
 import Model.CarModel;
+import Model.Object2D.Vehicle.Automotive.Automotive;
 import Visualizer.CarController;
 
 import javax.swing.*;
@@ -12,33 +13,24 @@ public class Application {
     public static Timer timer;
     private static final int delay = 50;
 
-    public Application(){
+    public Application() {
 
     }
-    private static void print(Object o){
-        System.out.print(o);
+
+    private static void print(Object o) {
+        System.out.println(o);
     }
-    public static void main(String[] Args){
-        if (Args[0] == "g"){ // Graphical mode with GUI
 
-            CarModel cM = new CarModel();
+    public static void main(String[] args) {
+        CarModel cM = new CarModel();
 
-            CarController cV = new CarController("CarSim 1.0", cM);
+        CarController cV = new CarController("CarSim 1.0", cM);
 
 
             timer = new Timer(delay, new CarController.TimerListener());
 
-            // Start the timer
-            timer.start();
+        // Start the timer
+        timer.start();
 
-        }
-        else { // Headless mode
-            CarModel cM = new CarModel();
-            cM.gas(100);
-            for(int i = 0; i<100; i++){
-                cM.step();
-                }
-        }
     }
-
-}
+ }

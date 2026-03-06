@@ -5,7 +5,6 @@ import Model.Object2D.Vehicle.Automotive.Cars.Saab95;
 import Model.Object2D.Vehicle.Automotive.Cars.Volvo240;
 import Model.Object2D.Vehicle.Automotive.Trucks.Scania;
 import Model.Object2D.Vehicle.VehicleFactory;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -25,6 +24,7 @@ public class CarModel {
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private VehicleFactory VF = new VehicleFactory();
 
+    private ArrayList<Reciever> carAddedListeners;
 
     // The frame that represents this instance View of the MVC pattern
     // A list of cars, modify if needed
@@ -33,15 +33,29 @@ public class CarModel {
 
     //methods:
 
-    private void randomVehicle() {
+
+    public void randomVehicle() {
         int vehicleKindsCount = VF.vehicleConstructors.size();
         int n = rng.nextInt(1, vehicleKindsCount);
         Runnable v = VF.vehicleConstructors.get(n);
         v.run();
     }
 
-    public void Addcar(){
 
+    public void SetPosition(){
+        for(Automotive i: cars){
+            i.setPosition(0,ypos);
+            ypos = ypos + 100;
+        }
+    }
+
+    public void addCar(){
+        if (getCars().size()<max) {
+            randomVehicle();
+            Automotive a = getCars().getLast();
+
+            notifyCarAdded();
+        }
     }
     public void InitialiseCars(){
         this.cars.add(new Volvo240());
@@ -50,9 +64,12 @@ public class CarModel {
     }
 
     public void removeCar(){ //Removes a random car
+
         int max = cars.size();
-        int random = rng.nextInt(0,max);
-        cars.remove(random);
+        if (max>0) {
+            int random = rng.nextInt(0, max);
+            cars.remove(random);
+        }
     }
 
     public CarModel() {

@@ -20,6 +20,9 @@ Användargränssnittet ni utgick från i del 3 var en ansats till implementation
             Döps om till MainController, förlorar icke-input orienterad kod
         -DrawPanel
             Döps om till MainView
+        -Application
+            main flyttas från CarModel till Application
+        Main update method is moved inside CarModel and called as step() to update model
             
 
 

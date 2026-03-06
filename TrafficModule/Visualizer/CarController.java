@@ -36,7 +36,7 @@ public class CarController extends JFrame{
     // Constructor
     public CarController(String framename, CarModel cc){
         this.carM = cc;
-        this.carView = new CarView(X, Y-240, carM.cars);
+        this.carView = new CarView(X, Y-240, carM);
         initComponents(framename);
     }
 
@@ -71,8 +71,6 @@ public class CarController extends JFrame{
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         this.add(carView);
-
-
 
         SpinnerModel spinnerModel =
                 new SpinnerNumberModel(0, //initial value
@@ -194,6 +192,7 @@ public class CarController extends JFrame{
         AddCarButton.addActionListener((new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                carM.addCar();
 
             }
         }));
@@ -220,19 +219,6 @@ public class CarController extends JFrame{
 
 
         }
-
-    public void SetComponentsImg(){
-        try {
-            for(Automotive i : carM.cars){
-                BufferedImage img = ImageIO.read(Objects.requireNonNull(CarView.class.getResourceAsStream("/pics/" + i.modelName + ".jpg")));
-
-                i.SetImage(img);
-            }
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
 
 
     }
