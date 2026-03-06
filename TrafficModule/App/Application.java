@@ -2,30 +2,31 @@ package App;
 
 
 import Model.CarModel;
-import Model.Object2D.Vehicle.Automotive.Automotive;
-import Visualizer.CarView;
+import Visualizer.CarController;
 
 import javax.swing.*;
 public class Application {
 
     CarModel cM;
-    CarView cV;
+    CarController cV;
     public static Timer timer;
     private static final int delay = 50;
 
     public Application(){
 
     }
-
+    private static void print(Object o){
+        System.out.print(o);
+    }
     public static void main(String[] Args){
         if (Args[0] == "g"){ // Graphical mode with GUI
 
             CarModel cM = new CarModel();
 
-            CarView cV = new CarView("CarSim 1.0", cM);
+            CarController cV = new CarController("CarSim 1.0", cM);
 
 
-            timer = new Timer(delay, new CarView.TimerListener());
+            timer = new Timer(delay, new CarController.TimerListener());
 
             // Start the timer
             cV.timer.start();

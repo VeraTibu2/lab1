@@ -5,11 +5,7 @@ import Model.Object2D.Vehicle.Automotive.Cars.Saab95;
 import Model.Object2D.Vehicle.Automotive.Cars.Volvo240;
 import Model.Object2D.Vehicle.Automotive.Trucks.Scania;
 import Model.Object2D.Vehicle.VehicleFactory;
-import Visualizer.CarView;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -57,11 +53,6 @@ public class CarModel {
     }
 
     public CarModel() {
-        // Instance of this class
-        CarModel mainCarModel = new CarModel();
-
-        mainCarModel.InitialiseCars();
-
     }
 
 
