@@ -50,12 +50,18 @@ public class CarView extends JPanel implements Reciever {
 
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }  
+        }
     }
 
-//    public void notify(){
-//
-//    };
+    //GET NOTIFIED
+    public void notify(String message){
+        switch(message){
+            case "Car Created":
+                return;
+            case "Car Destroyed":
+                return;
+        }
+   };
     // This method is called each time the panel updates/refreshes/repaints itself
     // TODO: Change to suit your needs.
     @Override

@@ -12,7 +12,7 @@ public abstract class VehicleWorkshop<C extends Object2D> extends Object2D {
     public BufferedImage Img;
 
     public VehicleWorkshop() {
-        super();
+
         storedVehicles = new ArrayList<C>();
         x = 300;
         y = 300;

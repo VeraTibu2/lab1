@@ -10,7 +10,11 @@ public abstract class Object2D {
     public double sizey;
     public String modelName; // The car model name
 
-    sizex = Img.getWidth();
+    public Object2D(){
+        sizex = Img.getWidth();
+        sizey = Img.getHeight();
+    }
+
     public void copyPosition(Object2D target) {
         x = target.x;
         y = target.y;

@@ -21,6 +21,7 @@ public class CarModel implements Notifier {
 
     private final int max = 4;
     // member fields:
+    private boolean go = true;
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private final VehicleFactory VF = new VehicleFactory();
@@ -93,11 +94,27 @@ public class CarModel implements Notifier {
         }
     }
 
+    public void randomDir(Automotive car){
+        if(go){
+            go = false;
+            Thread.startVirtualThread(() ->{
+                        try {
+                            Thread.sleep(10000);
+                            car.randomdir(rng);
+                            go = true;
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+            );
+        }
 
+    }
 
     public void step() {
         for (Automotive car : this.cars) {
             car.move();
+            randomDir(car);
             int x = (int) Math.round(car.x);
             int y = (int) Math.round(car.y);
         }

@@ -14,7 +14,6 @@ public abstract class Automotive extends Vehicle implements Movable {
     private double currentSpeed; // The current speed of the car
     public Color color; // Color of the car
 
-
     public final int getNrDoors () { return nrDoors; }
 
     public final double getEnginePower() {
@@ -74,6 +73,7 @@ public abstract class Automotive extends Vehicle implements Movable {
             throwRangeError();
         }
     }
+
 
 
 }
