@@ -62,8 +62,6 @@ public class CarModel implements Notifier {
             Subscription s = new Subscription(r, event);
             subscriptions.add(s);
         }
-    }
-
 
     public ArrayList<Automotive> getCars(){
         return cars;
@@ -76,11 +74,8 @@ public class CarModel implements Notifier {
             int random = rng.nextInt(0, max);
             cars.remove(random);
         }
-        this.notifyEvent("Car Removed");
+        notifyEvent("Car Removed");
     }
-
-
-
 
 
     // Calls the gas method for each car once
@@ -106,6 +101,7 @@ public class CarModel implements Notifier {
             int x = (int) Math.round(car.x);
             int y = (int) Math.round(car.y);
         }
+
     }
 
 }

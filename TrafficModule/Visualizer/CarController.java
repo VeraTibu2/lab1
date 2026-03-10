@@ -184,7 +184,7 @@ public class CarController extends JFrame{
                     if(i instanceof Scania) {
 
                         ((Scania) i).lowerBed(30);
-                   ;
+
                         System.out.println("Bed lowered!" +  ((Scania) i).getBedAngle());
                     }
                 }
