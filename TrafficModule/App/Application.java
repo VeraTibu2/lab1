@@ -1,4 +1,6 @@
 package App;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.lang.Thread;
 
 import Model.CarModel;
@@ -11,57 +13,50 @@ import Visualizer.CarView;
 import javax.swing.*;
 public class Application {
 
-    CarModel cM;
-    CarController cC;
-    CarView cV;
-    CollisionHandler cH;
-    public static Timer timer;
+    static CarModel cM;
+    static CarController cC;
+    static CarView cV;
+    static CollisionHandler cH;
+
     private static final int delay = 50;
+    private static Timer timer = new Timer(delay, new TimerListener());
 
     public Application() {
 
     }
 
-    private void wait(int timeToSleep){
-        try {
-            Thread.sleep(timeToSleep);
-        } catch(InterruptedException _){
 
-        };
-    }
     private static void print(Object o) {
         System.out.println(o);
     }
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
 
         //Runs Once
-        CarModel cM = new CarModel();
+        cM = new CarModel();
 
-        CarController cC = new CarController("CarSim 1.0", cM);
-        CarView cV = new CarView(600, 600, cM, cM.vWS);
-
-
-
-
-        //Repeats
-        while (true){
-            for (Automotive car : cM.cars) {
-                cV.setImage(car);
-                cH.EdgeCollison(car,this.getWidth(), this.getHeight());
-                if (car instanceof Volvo240){
-                    cH.WorkshopCollision((Volvo240) car, cM.vWS);
-                }
-
-            }
-
-        }
-        cM.step();
-        //frame.drawPanel.moveit(x, y, car);
-        // repaint() calls the paintComponent method of the panel
-        cV.repaint();
-
-        wait(50);
+        cC = new CarController("CarSim 1.0", cM);
+        cV = new CarView(600, 600, cM, cM.vWS);
+        cV.setImage(cM.vWS);
+        cH = new CollisionHandler(cM.vWS, cM.getCars());
+        timer.start();
 
     }
- }
+
+    private static class TimerListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if(!cM.getCars().isEmpty()) {
+                for (Automotive car : cM.getCars()) {
+                    cM.step();
+                    // repaint() calls the paintComponent method of the panel
+                    cH.EdgeCollison(car, cV.getWidth(), cV.getHeight());
+                    if (car instanceof Volvo240) {
+                        cH.WorkshopCollision((Volvo240) car);
+                    }
+                    cV.repaint();
+
+                }
+            }
+        }
+    }
+}

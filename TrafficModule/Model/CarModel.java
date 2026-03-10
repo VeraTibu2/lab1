@@ -17,10 +17,7 @@ import java.util.Random;
 
 
 public class CarModel implements Notifier {
-
-    CarModel(){
-        VolvoWorkshop vWS = new VolvoWorkshop();
-    }
+    public VolvoWorkshop vWS;
     // Session rng
     Random rng = new Random();
 
@@ -31,15 +28,21 @@ public class CarModel implements Notifier {
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private final VehicleFactory VF = new VehicleFactory();
 
-    private ArrayList<Subscription> subscriptions;
+    private ArrayList<Subscription> subscriptions = new ArrayList<>();
 
     // The frame that represents this instance View of the MVC pattern
     // A list of cars, modify if needed
-    public ArrayList<Automotive> cars = new ArrayList<>();
+    private ArrayList<Automotive> cars;
 
     //methods:
 
+    public CarModel(){
+        vWS = new VolvoWorkshop();
+        this.cars = VF.cars;
+    }
+
     public void randomVehicle() {
+
         int vehicleKindsCount = VF.vehicleConstructors.size();
         int n = rng.nextInt(1, vehicleKindsCount);
         Runnable v = VF.vehicleConstructors.get(n);
@@ -119,7 +122,6 @@ public class CarModel implements Notifier {
     public void step() {
         for (Automotive car : this.cars) {
             car.move();
-            randomDir(car);
             int x = (int) Math.round(car.x);
             int y = (int) Math.round(car.y);
         }

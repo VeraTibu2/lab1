@@ -35,13 +35,13 @@ public class CarView extends JPanel implements Reciever {
     // Initializes the panel and reads the images
     public CarView(int x, int y, CarModel model, VolvoWorkshop vWS) {
         refCarModel = model;
-        ArrayList<Automotive> cars = refCarModel.getCars();
+        this.cars = refCarModel.getCars();
+        this.vWS = vWS;
+        setImage(this.vWS);
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
-        this.vWS = vWS;
-        setImage(this.vWS);
-        this.cars = cars;
+
 
     }
 
@@ -68,15 +68,14 @@ public class CarView extends JPanel implements Reciever {
     // TODO: Change to suit your needs.
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        if(!cars.isEmpty()) {
+            super.paintComponent(g);
+            for (Automotive i : cars) {
 
-        for(Automotive i : cars) {
-
-
-            g.drawImage(i.Img, (int) i.x, (int) i.y, null); // see javadoc for more info on the parameters
+                g.drawImage(i.Img, (int) i.x, (int) i.y, null); // see javadoc for more info on the parameters
+            }
+            g.drawImage(vWS.Img, (int) vWS.x, (int) vWS.y, null);
         }
-        g.drawImage(vWS.Img, (int) vWS.x, (int) vWS.y, null);
-        
 
     }
 }

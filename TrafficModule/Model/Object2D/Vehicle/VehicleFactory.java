@@ -9,13 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VehicleFactory {
-    ArrayList<Automotive> cars;
+    public ArrayList<Automotive> cars;
     private int ypos = 0;
     public final List<Runnable> vehicleConstructors = List.of(
             this::AddScania, this::AddSaab, this::AddVolvo);
 
-
-
+    public VehicleFactory(){
+        this.cars = new ArrayList<>();
+    }
     public void SetPosition(){
         for(Automotive i: cars){
             i.setPosition(0,ypos);

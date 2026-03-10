@@ -36,7 +36,7 @@ public class CarController extends JFrame{
     // Constructor
     public CarController(String framename, CarModel cc){
         this.carM = cc;
-        this.carView = new CarView(X, Y-240, carM);
+        this.carView = new CarView(X, Y-240, carM, carM.vWS);
 
         initComponents(framename);
 
@@ -137,7 +137,7 @@ public class CarController extends JFrame{
         turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Automotive i: carM.cars){
+                for (Automotive i: carM.getCars()){
                     if(i instanceof Saab95){
                         ((Saab95)i ).setTurboOn();
                     }
