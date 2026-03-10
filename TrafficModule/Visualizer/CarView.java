@@ -28,17 +28,19 @@ public class CarView extends JPanel implements Reciever {
 
     CarModel refCarModel;
     CollisionHandler CHandler;
-    VolvoWorkshop vWS = new VolvoWorkshop();
+    VolvoWorkshop vWS;
+
 
 
     // Initializes the panel and reads the images
-    public CarView(int x, int y, CarModel model) {
+    public CarView(int x, int y, CarModel model, VolvoWorkshop vWS) {
         refCarModel = model;
         ArrayList<Automotive> cars = refCarModel.getCars();
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
-        setImage(vWS);
+        this.vWS = vWS;
+        setImage(this.vWS);
         this.cars = cars;
 
     }
@@ -69,10 +71,7 @@ public class CarView extends JPanel implements Reciever {
         super.paintComponent(g);
 
         for(Automotive i : cars) {
-            if(i instanceof Volvo240) {
-                CHandler.WorkshopCollision((Volvo240) i);
-            }
-            CHandler.EdgeCollison(i,this.getWidth(), this.getHeight());
+
 
             g.drawImage(i.Img, (int) i.x, (int) i.y, null); // see javadoc for more info on the parameters
         }

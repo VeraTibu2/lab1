@@ -3,6 +3,8 @@ package Model;
 import Model.Object2D.Object2D;
 import Model.Object2D.Vehicle.Automotive.Automotive;
 import Model.Object2D.Vehicle.VehicleFactory;
+import Model.Workshops.WorkshopTypes.VolvoWorkshop;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -16,6 +18,9 @@ import java.util.Random;
 
 public class CarModel implements Notifier {
 
+    CarModel(){
+        VolvoWorkshop vWS = new VolvoWorkshop();
+    }
     // Session rng
     Random rng = new Random();
 
