@@ -11,7 +11,6 @@ import java.util.Arrays;
 public class CollisionHandler {
     VolvoWorkshop WS;
     ArrayList<Automotive> cars;
-    private boolean collide = false;
 
 
     public CollisionHandler(VolvoWorkshop WS, ArrayList<Automotive> cars){
@@ -37,9 +36,8 @@ public class CollisionHandler {
         }
     }
 
-    public void WorkshopCollision(Volvo240 i){
-        //if true
-        if(collide && cars.contains(i)) {
+    public void WorkshopCollision(Volvo240 i, VolvoWorkshop vWS){
+        if (i.x + i.Img.getWidth()/2 <= vWS.x + vWS.Img.getWidth() && i.x + i.Img.getWidth()/2 >= vWS.x && i.y + i.Img.getHeight()/2 <= vWS.y + vWS.Img.getHeight() && i.y + i.Img.getHeight()/2 >= vWS.y){
             WS.takeInVehicle(i);
         }
     }

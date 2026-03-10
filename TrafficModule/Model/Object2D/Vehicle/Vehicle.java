@@ -1,5 +1,6 @@
 package Model.Object2D.Vehicle;
 import Model.Object2D.Object2D;
+import java.util.Random;
 
 public abstract class Vehicle extends Object2D implements Movable {
     private int dir_index = 0;
@@ -23,5 +24,10 @@ public abstract class Vehicle extends Object2D implements Movable {
     }
     private void updateDirection() {
         direction = directions[dir_index];
+    }
+
+    public void randomdir(Random rng){
+        dir_index = rng.nextInt(0, directions.length +1);
+        updateDirection();
     }
 }
