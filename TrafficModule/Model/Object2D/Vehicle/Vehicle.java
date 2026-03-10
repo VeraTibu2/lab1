@@ -24,4 +24,5 @@ public abstract class Vehicle extends Object2D implements Movable {
     private void updateDirection() {
         direction = directions[dir_index];
     }
+
 }

@@ -4,7 +4,6 @@ import Model.Object2D.Object2D;
 import Model.Object2D.Vehicle.Automotive.Automotive;
 import Model.Object2D.Vehicle.VehicleFactory;
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.Random;
 
 /*
@@ -13,16 +12,7 @@ import java.util.Random;
 * modifying the model state and the updating the view.
  */
 
-protected class Subscription {
-    public Reciever reciever;
 
-    public String event;
-
-    Subscription(Reciever r, String e){
-        reciever = r;
-        event = e;
-    }
-}
 
 public class CarModel implements Notifier {
 
@@ -33,16 +23,15 @@ public class CarModel implements Notifier {
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
-    private VehicleFactory VF = new VehicleFactory();
+    private final VehicleFactory VF = new VehicleFactory();
 
     private ArrayList<Subscription> subscriptions;
 
     // The frame that represents this instance View of the MVC pattern
     // A list of cars, modify if needed
-    private ArrayList<Automotive> cars = new ArrayList<>();
+    public ArrayList<Automotive> cars = new ArrayList<>();
 
     //methods:
-
 
     public void randomVehicle() {
         int vehicleKindsCount = VF.vehicleConstructors.size();
@@ -51,13 +40,6 @@ public class CarModel implements Notifier {
         v.run();
     }
 
-
-    public void SetPosition(){
-        for(Automotive i: cars){
-            i.setPosition(0,ypos);
-            ypos = ypos + 100;
-        }
-    }
 
     public void addCar(){
         if (getCars().size()<max) {
@@ -84,7 +66,6 @@ public class CarModel implements Notifier {
 
 
     public ArrayList<Automotive> getCars(){
-        ArrayList<Automotive> cars;
         return cars;
     }
 
@@ -117,6 +98,8 @@ public class CarModel implements Notifier {
         }
     }
 
+
+
     public void step() {
         for (Automotive car : this.cars) {
             car.move();
@@ -124,4 +107,6 @@ public class CarModel implements Notifier {
             int y = (int) Math.round(car.y);
         }
     }
+
 }
+

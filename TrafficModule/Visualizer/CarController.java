@@ -196,7 +196,6 @@ public class CarController extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 carM.addCar();
                 Automotive a = carM.getCars().getLast();
-                CarM.SetPosition(a);
                 carView.setImage(a);
             }
         }));

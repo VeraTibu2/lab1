@@ -14,8 +14,8 @@ public abstract class VehicleWorkshop<C extends Object2D> extends Object2D {
     public VehicleWorkshop() {
         super();
         storedVehicles = new ArrayList<C>();
-        x = 0;
-        y = 0;
+        x = 300;
+        y = 300;
     }
     public void takeInVehicle(C newVehicle){
         double myX = this.x;

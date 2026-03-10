@@ -38,8 +38,7 @@ public class CarView extends JPanel implements Reciever {
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
-
-        this.CHandler = new CollisionHandler(this.vWS, cars);
+        setImage(vWS);
         this.cars = cars;
 
     }
@@ -49,13 +48,14 @@ public class CarView extends JPanel implements Reciever {
             BufferedImage img = ImageIO.read((InputStream)Objects.requireNonNull(CarView.class.getResourceAsStream("/pics/" + i.modelName + ".jpg")));
             i.SetImage(img);
 
-
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
+        }  
     }
 
-    notify();
+//    public void notify(){
+//
+//    };
     // This method is called each time the panel updates/refreshes/repaints itself
     // TODO: Change to suit your needs.
     @Override

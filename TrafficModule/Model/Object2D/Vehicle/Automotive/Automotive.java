@@ -13,10 +13,8 @@ public abstract class Automotive extends Vehicle implements Movable {
     protected double enginePower;
     private double currentSpeed; // The current speed of the car
     public Color color; // Color of the car
-    public String modelName; // The car model name
 
 
-    public BufferedImage Img;
     public final int getNrDoors () { return nrDoors; }
 
     public final double getEnginePower() {
@@ -77,8 +75,6 @@ public abstract class Automotive extends Vehicle implements Movable {
         }
     }
 
-    public void SetImage(BufferedImage Image){
-        this.Img = Image;
-    }
+
 }
 
