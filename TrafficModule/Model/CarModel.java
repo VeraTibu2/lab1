@@ -54,6 +54,7 @@ public class CarModel implements Notifier {
         if (getCars().size()<max) {
             randomVehicle();
             notifyEvent("Car Added");
+            System.out.println("car added");
 
         }
     }
@@ -107,7 +108,8 @@ public class CarModel implements Notifier {
             go = false;
             Thread.startVirtualThread(() ->{
                         try {
-                            Thread.sleep(10000);
+                            Thread.sleep(1000);
+                            Random rng = new Random();
                             car.randomdir(rng);
                             go = true;
                         } catch (InterruptedException e) {
@@ -120,12 +122,15 @@ public class CarModel implements Notifier {
     }
 
     public void step() {
-        for (Automotive car : this.cars) {
-            car.move();
-            int x = (int) Math.round(car.x);
-            int y = (int) Math.round(car.y);
-        }
+        if (!getCars().isEmpty()) {
 
+            for (Automotive car : this.getCars()) {
+                car.move();
+                randomDir(car);
+                int x = (int) Math.round(car.x);
+                int y = (int) Math.round(car.y);
+            }
+        }
     }
 
 }

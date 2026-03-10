@@ -68,8 +68,8 @@ public class CarView extends JPanel implements Reciever {
     // TODO: Change to suit your needs.
     @Override
     protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
         if(!cars.isEmpty()) {
-            super.paintComponent(g);
             for (Automotive i : cars) {
 
                 g.drawImage(i.Img, (int) i.x, (int) i.y, null); // see javadoc for more info on the parameters

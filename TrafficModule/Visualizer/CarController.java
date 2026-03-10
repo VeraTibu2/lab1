@@ -34,9 +34,9 @@ public class CarController extends JFrame{
     
     public CarView carView;
     // Constructor
-    public CarController(String framename, CarModel cc){
+    public CarController(String framename, CarModel cc, CarView cV){
         this.carM = cc;
-        this.carView = new CarView(X, Y-240, carM, carM.vWS);
+        this.carView = cV;
 
         initComponents(framename);
 

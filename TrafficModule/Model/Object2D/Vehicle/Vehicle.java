@@ -27,7 +27,9 @@ public abstract class Vehicle extends Object2D implements Movable {
     }
 
     public void randomdir(Random rng){
-        dir_index = rng.nextInt(0, directions.length +1);
+        int i = dir_index;
+        while(dir_index == i)
+        i = rng.nextInt(0, directions.length +1);
         updateDirection();
     }
 }
