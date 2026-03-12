@@ -34,9 +34,9 @@ public class CarController extends JFrame{
     
     public CarView carView;
     // Constructor
-    public CarController(String framename, CarModel cc){
+    public CarController(String framename, CarModel cc, CarView cV){
         this.carM = cc;
-        this.carView = new CarView(X, Y-240, carM);
+        this.carView = cV;
 
         initComponents(framename);
 
@@ -137,7 +137,7 @@ public class CarController extends JFrame{
         turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Automotive i: carM.cars){
+                for (Automotive i: carM.getCars()){
                     if(i instanceof Saab95){
                         ((Saab95)i ).setTurboOn();
                     }
@@ -184,7 +184,7 @@ public class CarController extends JFrame{
                     if(i instanceof Scania) {
 
                         ((Scania) i).lowerBed(30);
-                   ;
+
                         System.out.println("Bed lowered!" +  ((Scania) i).getBedAngle());
                     }
                 }
@@ -196,7 +196,6 @@ public class CarController extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 carM.addCar();
                 Automotive a = carM.getCars().getLast();
-                CarM.SetPosition(a);
                 carView.setImage(a);
             }
         }));

@@ -9,13 +9,12 @@ import java.util.*;
 // TrafficModule.Workshops.VehicleWorkshop carWorkshop = new TrafficModule.Workshops.VehicleWorkshop<CarsModule.Cars>();
 public abstract class VehicleWorkshop<C extends Object2D> extends Object2D {
     private ArrayList<C> storedVehicles;
-    public BufferedImage Img;
 
     public VehicleWorkshop() {
-        super();
+
         storedVehicles = new ArrayList<C>();
-        x = 0;
-        y = 0;
+        x = 300;
+        y = 300;
     }
     public void takeInVehicle(C newVehicle){
         double myX = this.x;
@@ -29,7 +28,4 @@ public abstract class VehicleWorkshop<C extends Object2D> extends Object2D {
         return storedVehicles.remove(desiredIndex);
     }
 
-    public void SetImg(BufferedImage img){
-        this.Img = img;
-    }
 }

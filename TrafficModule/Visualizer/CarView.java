@@ -28,19 +28,20 @@ public class CarView extends JPanel implements Reciever {
 
     CarModel refCarModel;
     CollisionHandler CHandler;
-    VolvoWorkshop vWS = new VolvoWorkshop();
+    VolvoWorkshop vWS;
+
 
 
     // Initializes the panel and reads the images
-    public CarView(int x, int y, CarModel model) {
+    public CarView(int x, int y, CarModel model, VolvoWorkshop vWS) {
         refCarModel = model;
-        ArrayList<Automotive> cars = refCarModel.getCars();
+        this.cars = refCarModel.getCars();
+        this.vWS = vWS;
+        setImage(this.vWS);
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
 
-        this.CHandler = new CollisionHandler(this.vWS, cars);
-        this.cars = cars;
 
     }
 
@@ -49,29 +50,32 @@ public class CarView extends JPanel implements Reciever {
             BufferedImage img = ImageIO.read((InputStream)Objects.requireNonNull(CarView.class.getResourceAsStream("/pics/" + i.modelName + ".jpg")));
             i.SetImage(img);
 
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    notify();
+    //GET NOTIFIED
+    public void notify(String message){
+        switch(message){
+            case "Car Created":
+                return;
+            case "Car Destroyed":
+                return;
+        }
+   };
     // This method is called each time the panel updates/refreshes/repaints itself
     // TODO: Change to suit your needs.
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        if(!cars.isEmpty()) {
+            for (Automotive i : cars) {
 
-        for(Automotive i : cars) {
-            if(i instanceof Volvo240) {
-                CHandler.WorkshopCollision((Volvo240) i);
+                g.drawImage(i.Img, (int) i.x, (int) i.y, null); // see javadoc for more info on the parameters
             }
-            CHandler.EdgeCollison(i,this.getWidth(), this.getHeight());
-
-            g.drawImage(i.Img, (int) i.x, (int) i.y, null); // see javadoc for more info on the parameters
+            g.drawImage(vWS.Img, (int) vWS.x, (int) vWS.y, null);
         }
-        g.drawImage(vWS.Img, (int) vWS.x, (int) vWS.y, null);
-        
 
     }
 }

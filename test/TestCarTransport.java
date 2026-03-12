@@ -33,6 +33,7 @@ public class TestCarTransport {
 
         T.currentRampState = Trucks.rampState.LOWERED;
         T.move();
+
         Assertions.assertEquals(0, T.getCurrentSpeed());
     }
 

@@ -6,7 +6,14 @@ public abstract class Object2D {
     public double x; // xcord
     public double y; //ycord
     public BufferedImage Img;
-    public String modelName;
+    public double sizex;
+    public double sizey;
+    public String modelName; // The car model name
+
+    public Object2D(){
+        sizex = 20;
+        sizey = 20;
+    }
 
     public void copyPosition(Object2D target) {
         x = target.x;

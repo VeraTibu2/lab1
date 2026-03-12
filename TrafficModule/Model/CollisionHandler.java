@@ -9,13 +9,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CollisionHandler {
-    VolvoWorkshop WS;
+    VolvoWorkshop vWS;
     ArrayList<Automotive> cars;
-    private boolean collide = false;
 
 
     public CollisionHandler(VolvoWorkshop WS, ArrayList<Automotive> cars){
-        this.WS = WS;
+        this.vWS = WS;
         this.cars = cars;
     }
 
@@ -38,9 +37,8 @@ public class CollisionHandler {
     }
 
     public void WorkshopCollision(Volvo240 i){
-        //if true
-        if(collide && cars.contains(i)) {
-            WS.takeInVehicle(i);
+        if (i.x + i.Img.getWidth()/2 <= vWS.x + vWS.Img.getWidth() && i.x + i.Img.getWidth()/2 >= vWS.x && i.y + i.Img.getHeight()/2 <= vWS.y + vWS.Img.getHeight() && i.y + i.Img.getHeight()/2 >= vWS.y){
+            vWS.takeInVehicle(i);
         }
     }
 }
