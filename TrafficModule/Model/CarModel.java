@@ -108,7 +108,7 @@ public class CarModel implements Notifier {
             go = false;
             Thread.startVirtualThread(() ->{
                         try {
-                            Thread.sleep(1000);
+                            Thread.sleep(500);
                             Random rng = new Random();
                             car.randomdir(rng);
                             go = true;
