@@ -62,17 +62,26 @@ public class CarView extends JPanel implements Reciever {
                 return;
         }
    };
+
+    public void carRemoved() {
+        cars = refCarModel.getCars();
+        repaint();
+    }
+
     // This method is called each time the panel updates/refreshes/repaints itself
     // TODO: Change to suit your needs.
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        g.drawImage(vWS.Img, (int) vWS.x, (int) vWS.y, null);
         if(!cars.isEmpty()) {
             for (Automotive i : cars) {
-
                 g.drawImage(i.Img, (int) i.x, (int) i.y, null); // see javadoc for more info on the parameters
             }
 
+        }
+        else{
+            //g.clearRect(0,0,getWidth(),getHeight());
         }
 
     }

@@ -194,8 +194,8 @@ public class CarController extends JFrame{
         AddCarButton.addActionListener((new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carM.addCar();
-                Automotive a = carM.getCars().getLast();
+                Automotive a = carM.addCar();
+
                 carView.setImage(a);
             }
         }));
@@ -204,6 +204,7 @@ public class CarController extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 carM.removeCar();
+                carView.carRemoved();
             }
         });
 

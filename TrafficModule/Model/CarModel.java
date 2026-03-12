@@ -20,7 +20,8 @@ public class CarModel implements Notifier {
     public VolvoWorkshop vWS;
     // Session rng
     Random rng = new Random();
-
+    int boundX;
+    int boundY;
     private final int max = 4;
     // member fields:
     private boolean go = true;
@@ -41,6 +42,8 @@ public class CarModel implements Notifier {
     public CarModel(int boundX, int boundY){
         vWS = new VolvoWorkshop();
         this.cars = VF.cars;
+        this.boundX = boundX;
+        this.boundY = boundY;
     }
 
     public void randomVehicle() {
@@ -53,15 +56,17 @@ public class CarModel implements Notifier {
     }
 
 
-    public void addCar(){
+    public Automotive addCar(){
         if (getCars().size()<max) {
             randomVehicle();
+            Automotive v = cars.getLast();
             notifyEvent("Car Added");
             System.out.println("car added");
 
             VF.setRandomPosition(v, boundX, boundY, rng);
             return v;
         }
+        return null;
     }
 
     protected void notifyEvent(String msg){
@@ -124,6 +129,7 @@ public class CarModel implements Notifier {
                             car.randomdir(rng);
                             go = true;
                         } catch (InterruptedException e) {
+                            System.out.println("can't change pos");
                             throw new RuntimeException(e);
                         }
                     }

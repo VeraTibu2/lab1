@@ -18,16 +18,15 @@ public class VehicleFactory {
 
 
     public VehicleFactory(){
+
         this.cars = new ArrayList<>();
     }
-    public void SetPosition(){
-        for(Automotive i: cars){
-            i.setPosition(0,ypos);
-            ypos = ypos + 100;
-        }
+
+
+    public void setRandomPosition(Automotive car, int xMax, int yMax, Random rng){
+        car.x = rng.nextInt(0, xMax);
+        car.y = rng.nextInt(0, yMax);
     }
-
-
     public Volvo240 AddVolvo(){
         Volvo240 v = new Volvo240();
         cars.add(v);
