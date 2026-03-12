@@ -26,7 +26,7 @@ public class Application {
     public static void main(String[] args) {
 
         //Runs Once
-        cM = new CarModel();
+        cM = new CarModel(X,Y);
         cV = new CarView(X, Y, cM, cM.vWS);
         cC = new CarController("CarSim 1.0", cM, cV);
         cV.setImage(cM.vWS);
@@ -36,6 +36,7 @@ public class Application {
     }
 
     private static class TimerListener implements ActionListener {
+        //Runs repeatedly, at (delay) intervals
         public void actionPerformed(ActionEvent e) {
             cM.step();
             if(!cM.getCars().isEmpty()) {

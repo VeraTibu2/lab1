@@ -24,8 +24,6 @@ public class CarView extends JPanel implements Reciever {
     // Just a single image, TODO: Generalize
     ArrayList<Automotive> cars;
 
-    ArrayList<BufferedImage> carImages;
-
     CarModel refCarModel;
     CollisionHandler CHandler;
     VolvoWorkshop vWS;
@@ -74,7 +72,7 @@ public class CarView extends JPanel implements Reciever {
 
                 g.drawImage(i.Img, (int) i.x, (int) i.y, null); // see javadoc for more info on the parameters
             }
-            g.drawImage(vWS.Img, (int) vWS.x, (int) vWS.y, null);
+
         }
 
     }

@@ -30,13 +30,15 @@ public class CarModel implements Notifier {
 
     private ArrayList<Subscription> subscriptions = new ArrayList<>();
 
+    private ArrayList<Reciever> subscribers = new ArrayList<>();
+
     // The frame that represents this instance View of the MVC pattern
     // A list of cars, modify if needed
     private ArrayList<Automotive> cars;
 
     //methods:
 
-    public CarModel(){
+    public CarModel(int boundX, int boundY){
         vWS = new VolvoWorkshop();
         this.cars = VF.cars;
     }
@@ -47,6 +49,7 @@ public class CarModel implements Notifier {
         int n = rng.nextInt(1, vehicleKindsCount);
         Runnable v = VF.vehicleConstructors.get(n);
         v.run();
+
     }
 
 
@@ -56,18 +59,24 @@ public class CarModel implements Notifier {
             notifyEvent("Car Added");
             System.out.println("car added");
 
+            VF.setRandomPosition(v, boundX, boundY, rng);
+            return v;
         }
     }
 
     protected void notifyEvent(String msg){
+        for (Reciever subscriber : subscribers){
+            subscriber.notify(msg);
+        }
+     /*
         if (!subscriptions.isEmpty()) {
             for (Subscription s : subscriptions) {
-                if (s.event.equals(msg)) {
-                    s.reciever.notify(msg);
-                }
+                s.reciever.notify(msg);
             }
         }
+      */
     }
+
     public void subscribe(Reciever r, String event){
             Subscription s = new Subscription(r, event);
             subscriptions.add(s);
@@ -80,11 +89,13 @@ public class CarModel implements Notifier {
     public void removeCar(){ //Removes a random car
 
         int max = cars.size();
+        //Print statement here confirms model updates properly
+        System.out.println(max);
         if (max>0) {
             int random = rng.nextInt(0, max);
             cars.remove(random);
         }
-        notifyEvent("Car Removed");
+        notifyEvent("Car Destroyed");
     }
 
 
